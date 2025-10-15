@@ -39,7 +39,7 @@ body {
     display: grid;
     place-items: center;
     align-items: center;
-    background-image: url("img/school.png");
+    background-image: url("../project/img/school.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
