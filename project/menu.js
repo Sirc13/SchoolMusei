@@ -1,5 +1,6 @@
 const toggleBtn = document.getElementById("toggleBtn");
 const mediaQuery = window.matchMedia('(max-width: 600px)');
+sidebar.classList.toggle('collapsed');
 function handleMediaQueryChange(e) {
     if (e.matches) {
         toggleBtn.style.display = 'block';
