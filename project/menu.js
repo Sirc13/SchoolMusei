@@ -1,5 +1,24 @@
-// Инициализация правильной иконки при загрузке
+const toggleBtn = document.getElementById("toggleBtn");
+const mediaQuery = window.matchMedia('(max-width: 600px)');
+function handleMediaQueryChange(e) {
+    if (e.matches) {
+        toggleBtn.style.display = 'block';
+        sidebar.classList.toggle('collapsed');
+    }else {
+        toggleBtn.style.display = 'none';
+        sidebar.classList.toggle('collapsed');
+    }
+}
+handleMediaQueryChange(mediaQuery);
+mediaQuery.addEventListener('change', handleMediaQueryChange);
+
 document.addEventListener('DOMContentLoaded', function() {
+    if (!sidebar.classList.contains('collapsed')) {
+        sidebar.classList.toggle('collapsed');
+        sidebar.classList.toggle('collapsed');
+        toggleBtn.classList.toggle('collapsed');
+        toggleBtn.innerHTML = '☰';
+    }
 
     // Добавляем обработчики для подменю
     const hasSubmenuItems = document.querySelectorAll('.has-submenu > a');
@@ -27,4 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+toggleBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('collapsed');
+    toggleBtn.classList.toggle('collapsed');
+
+    // Меняем иконку кнопки
+    if (sidebar.classList.contains('collapsed')) {
+        toggleBtn.innerHTML = '☰';
+    } else {
+        toggleBtn.innerHTML = '×';
+    }
 });

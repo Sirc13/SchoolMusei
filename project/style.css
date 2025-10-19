@@ -172,6 +172,32 @@ body {
     content: " ▲";
 }
 
+.toggle-btn {
+    display: none;
+    position: absolute;
+    left: 263px;
+    top: 20px;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.toggle-btn:hover {
+    background: var(--primary);
+    transform: translateX(2px);
+}
+
+.toggle-btn.collapsed {
+    left: 0;
+}
+
 /* Основное содержимое */
 .main-content {
     flex: 1;
@@ -275,7 +301,7 @@ footer {
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .sidebar {
         position: absolute;
         height: 100%;
