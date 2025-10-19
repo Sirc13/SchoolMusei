@@ -6,7 +6,6 @@ function handleMediaQueryChange(e) {
         sidebar.classList.toggle('collapsed');
     }else {
         toggleBtn.style.display = 'none';
-        sidebar.classList.toggle('collapsed');
     }
 }
 handleMediaQueryChange(mediaQuery);
