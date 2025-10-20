@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Музей</title>
     <link rel="stylesheet" href="project/style.css">
 </head>
@@ -10,25 +10,23 @@
     <header class="page-header">
         <h1 class="header-title">Музей истории школы</h1>
     </header>
+    
     <div class="wrapper">
-        <button class="toggle-btn" id="toggleBtn">×</button>
-
         <div class="sidebar" id="sidebar">
             <h2>Меню</h2>
             <ul>
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="project/about.html">О нас</a></li>
-                    <li><a href="project/ЗБС.html">Зал боевой славы</a></li>
-                        <li><a href="project/historySchool(Пустой).html">История школы</a></li>
-
-              	<li class="has-submenu">
+                <li><a href="project/ЗБС.html">Зал боевой славы</a></li>
+                <li><a href="project/historySchool(Пустой).html">История школы</a></li>
+                
+                <li class="has-submenu">
                     <a>Зал трудовой славы</a>
                     <ul class="submenu">
                         <li class="has-submenu">
                             <a href="project/organization(Пустой).html">Организации школы</a>
                             <ul class="submenu">
                                 <li><a href="project/patriot(Пустой).html">Патриотика</a></li>
-                                
                                 <li><a href="project/dobro(Пустой).html">Волонтерство</a></li>
                             </ul>
                         </li>
@@ -38,7 +36,6 @@
                             <ul class="submenu">
                                 <li><a href="project/auto.html">Автошкола</a></li>
                                 <li><a href="project/day_zdorovia(Пустой).html">День здоровья</a></li>
-                                <li><a href="project/subjects(Пустой).html">Предметы недели</a></li>
                                 <li><a href="project/veterans(Пустой).html">Встречи с ветеранами</a></li>
                             </ul>
                         </li>
@@ -48,38 +45,38 @@
                                 <li><a href="project/vsoch(Пустой).html">ВСОШ</a></li>
                                 <li><a href="project/pdd(Пустой).html">ПДД</a></li>
                                 <li><a href="project/olimp(Пустой).html">Олимпиады и конкурсы</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-
-            </ul>
-                </li>
-            <li><a href="project/contacts.html">Предложи свою историю</a></li>
             </ul>
         </div>
 
-    <!-- Основное содержимое -->
-    <div class="main-content" id="mainContent">
-        <h1>Уважаемые посетители нашего сайта!<br>Мы рады приветствовать Вас в виртуальном школьном музее!</h1>
-
-        <div class="card">
-                <p>Виртуальный музей расположен в сети Интернет, но основан на реальных экспонатах и документах, хранящихся в помещении школы № 18. Он имеет свою структуру, свободный доступ к музейным материалам, документам, экспонатам и экспозициям.</p>
-        </div>
+        <!-- Основное содержимое -->
+        <div class="main-content" id="mainContent">
+            <!-- Заголовок по центру -->
+            <div class="centered-header">
+                <h1>Уважаемые посетители нашего сайта!</h1>
+                <p class="subtitle">Мы рады приветствовать Вас в виртуальном школьном музее!</p>
+            </div>
             
-        <div class="card">
-            <p>Виртуальный школьный музей открывает возможности для широкой аудитории: электронный материал Вы можете использовать на уроках, классных часах, при написании рефератов, исследовательских работ. Вам предоставляется возможность совершить виртуальную экскурсию, экскурс в историческое прошлое.</p>
-         </div>
-
-        <div class="card">
-            <p>Мы надеемся на сотрудничество с бывшими выпускниками и нынешними учащимися школы.
-                Ждем от Вас документы, фотографии из личных архивов в электронном варианте, воспоминания о своих одноклассниках, учителях, школе на Е-mail: School18Kotl@mail.ru</p>
+            <!-- Основной текст по центру без блоков -->
+            <div class="centered-content">
+                <p><i>Виртуальный музей расположен в сети Интернет, но основан на реальных экспонатах и документах, хранящихся в помещении школы № 18. Он имеет свою структуру, свободный доступ к музейным материалам, документам, экспонатам и экспозициям.</i></p>
+                
+                <p><i>Виртуальный школьный музей открывает возможности для широкой аудитории: электронный материал Вы можете использовать на уроках, классных часах, при написании рефератов, исследовательских работ. Вам предоставляется возможность совершить виртуальную экскурсию, экскурс в историческое прошлое.</i></p>
+                
+                <p><i>Мы надеемся на сотрудничество с бывшими выпускниками и нынешними учащимися школы.</i></p>
+                
+                <p><i>Ждем от Вас документы, фотографии из личных архивов в электронном варианте, воспоминания о своих одноклассниках, учителях, школе на E-mail: <a href="mailto:School18Kotl@mail.ru" class="email-link">School18Kotl@mail.ru</a></i></p>
+            </div>
         </div>
-     </div>
     </div>
     
     <footer>
         © 2025 Сайт принадлежит МОУ СОШ №18. Все права защищены.
     </footer>
 
-    <script src = "project/menu.js"></script>
+    <script src="project/menu.js"></script>
 </body>
 </html>

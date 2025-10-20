@@ -6,7 +6,7 @@
     --dark: #2c3e50;
     --success: #27ae60;
     --warning: #f39c12;
-    --text: #2d61af;
+    --text: #34495e;
 }
 
 * {
@@ -39,9 +39,9 @@ body {
     display: grid;
     place-items: center;
     align-items: center;
-    background-image: url("https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/school.png");
+    background-image: url("https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/school1.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;;
     height: 300px;
     padding: 15px 30px;
     color: white;
@@ -49,12 +49,13 @@ body {
     position: relative;
     z-index: 100;
 }
-.page-header h1 {
-    color: var(--text);
-}
 
-.page-header:hover {
-    transform: scale(1.05);
+.page-header h1 {
+    color: #15066a;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+    padding: 15px 30px;
+    border-radius: 10px;
 }
 
 .header-title {
@@ -85,7 +86,6 @@ body {
 .sidebar h2 {
     color: white;
     text-align: center;
-    border-bottom: 2px solid rgba(255,255,255,0.3);
     padding-bottom: 15px;
     white-space: nowrap;
     margin: 0 0 25px 0;
@@ -172,32 +172,6 @@ body {
     content: " ▲";
 }
 
-.toggle-btn {
-    display: none;
-    position: absolute;
-    left: 263px;
-    top: 20px;
-    background: var(--secondary);
-    color: white;
-    border: none;
-    padding: 12px 15px;
-    cursor: pointer;
-    border-radius: 0 8px 8px 0;
-    z-index: 100;
-    transition: all 0.3s ease;
-    font-size: 18px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-}
-
-.toggle-btn:hover {
-    background: var(--primary);
-    transform: translateX(2px);
-}
-
-.toggle-btn.collapsed {
-    left: 0;
-}
-
 /* Основное содержимое */
 .main-content {
     flex: 1;
@@ -263,7 +237,7 @@ body {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(232, 227, 227, 0);
     transition: transform 0.3s ease;
 }
 
@@ -283,8 +257,8 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(44, 62, 80, 0.8);
-    color: white;
+    background: rgba(183, 199, 213, 0.523);
+    color: rgba(17, 16, 16, 0.829);
     padding: 10px;
     font-size: 14px;
     text-align: center;
@@ -300,36 +274,53 @@ footer {
     font-size: 14px;
 }
 
-/* Адаптивность */
-@media (max-width: 600px) {
-    .sidebar {
-        position: absolute;
-        height: 100%;
-        z-index: 10;
-    }
-    
-    .sidebar.collapsed {
-        transform: translateX(-100%);
-    }
-    
-    
-    .main-content {
-        padding: 20px;
-        margin-left: 0 !important;
-    }
-    
-    .photo-gallery {
-        grid-template-columns: 1fr;
-    }
-    
-    .header-title {
-        font-size: 22px;
-    }
-    
-    .header-photo {
-        width: 50px;
-        height: 50px;
-    }
+/* Стили для мобильной кнопки меню */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: var(--secondary);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--primary);
+    transform: scale(1.1);
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Ровный крестик для мобильной кнопки */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Специфические стили для страниц */
@@ -452,8 +443,8 @@ footer {
 
 /* Анимации */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .fade-in {
@@ -469,45 +460,400 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
+    overflow-y: auto;
 }
 
 .modal-content {
     position: relative;
     background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 10px;
+    margin: 1% auto;
+    padding: 30px;
+    width: 95%;
+    max-width: 1200px;
+    min-height: 300px;
+    border-radius: 12px;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: flex-start;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-image-container {
+    flex-shrink: 0;
+    max-width: 400px;
+    width: 40%;
 }
 
 .modal-image {
-    max-width: 300px;
-    max-height: 400px;
+    max-width: 100%;
+    max-height: 500px;
     width: auto;
     height: auto;
-    border-radius: 5px;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .modal-text {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.modal-text h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+}
+
+.modal-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+    color: #444;
+}
+
+.modal-text strong {
+    color: var(--primary);
+    font-weight: 700;
 }
 
 .close {
     position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 28px;
+    right: 20px;
+    top: 15px;
+    font-size: 32px;
     font-weight: bold;
     cursor: pointer;
-    color: #aaa;
+    color: #666;
+    z-index: 10;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
 .close:hover {
     color: #000;
+    background: #f0f0f0;
+    transform: scale(1.1);
+}
+
+/* Стили для центрированного заголовка */
+.centered-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+}
+
+.centered-header h1 {
+    font-size: 2.2em;
+    color: #1e3c72;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.centered-header .subtitle {
+    font-size: 1.3em;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Стили для центрированного контента */
+.centered-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.7;
+}
+
+.centered-content p {
+    margin-bottom: 20px;
+    font-size: 1.05em;
+    text-align: justify;
+}
+
+/* Стили для заголовка сайдбара с кнопкой */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 15px;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Стили для кнопки переключения меню в сайдбаре */
+.menu-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Состояние по умолчанию (свернутое меню) - три горизонтальные линии */
+.menu-toggle span:nth-child(1) {
+    transform: none;
+}
+
+.menu-toggle span:nth-child(2) {
+    transform: none;
+}
+
+.menu-toggle span:nth-child(3) {
+    transform: none;
+}
+
+/* Анимация кнопки при развернутом меню - ровный крестик */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -1px;
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -1px;
+}
+
+/* Стили для свернутого меню */
+.sidebar.collapsed {
+    width: 60px;
+    padding: 25px 10px;
+}
+
+.sidebar.collapsed .sidebar-header {
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.sidebar.collapsed .sidebar-header h2 {
+    display: none;
+}
+
+.sidebar.collapsed ul {
+    display: none;
+}
+
+.sidebar.collapsed .menu-toggle {
+    margin: 0 auto;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        height: 100%;
+        z-index: 10;
+        width: 280px;
+    }
+    
+    .sidebar.collapsed {
+        transform: translateX(-100%);
+    }
+    
+    .main-content {
+        padding: 20px;
+        margin-left: 0 !important;
+    }
+    
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-title {
+        font-size: 22px;
+    }
+    
+    .header-photo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Показываем кнопку только на мобильных устройствах */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    /* Корректируем отступы для шапки при наличии кнопки */
+    .page-header {
+        padding-left: 80px;
+    }
+    
+    /* Скрываем кнопку меню в сайдбаре на мобильных устройствах */
+    .menu-toggle {
+        display: none !important;
+    }
+    
+    /* Убираем flex-распределение для заголовка на мобильных */
+    .sidebar-header {
+        display: block;
+        text-align: center;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+    }
+    
+    .sidebar-header h2 {
+        display: block !important;
+        text-align: center;
+        margin: 0;
+    }
+    
+    /* Убираем отступы у сайдбара на мобильных */
+    .sidebar {
+        padding: 20px 15px;
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 480px) {
+    .mobile-menu-toggle {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+    }
+    
+    .sidebar {
+        width: 260px;
+        padding: 15px 10px;
+    }
+}
+
+/* Адаптивность для модального окна */
+@media (max-width: 1024px) {
+    .modal-content {
+        width: 98%;
+        max-width: 900px;
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .modal-image-container {
+        max-width: 350px;
+        width: 45%;
+    }
+    
+    .modal-image {
+        max-height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        margin: 2% auto;
+        width: 95%;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .modal-image-container {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .modal-image {
+        max-height: 400px;
+        margin: 0 auto 15px;
+    }
+    
+    .modal-text {
+        max-height: 60vh;
+        padding: 10px;
+        font-size: 1em;
+    }
+    
+    .modal-text h3 {
+        font-size: 1.5em;
+    }
+    
+    .close {
+        right: 15px;
+        top: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 1% auto;
+        width: 98%;
+        padding: 15px;
+    }
+    
+    .modal-text {
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+    
+    .modal-text h3 {
+        font-size: 1.3em;
+    }
 }
