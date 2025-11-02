@@ -91,15 +91,15 @@ function getSpecialModalGallery(heroName) {
         galleryHTML = `
             <div class="photo-gallery" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 20px 0;">
                 <div class="photo-item">
-                    <img src="img/BOB/Баландин 8г/1.png" alt="Фото 1 Баландина" style="cursor: default;">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B0%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D0%BD%208%D0%B3/1.png" alt="Фото 1 Баландина" style="cursor: default;">
                     <div class="photo-caption"></div>
                 </div>
                 <div class="photo-item">
-                    <img src="img/BOB/Баландин 8г/2.png" alt="Фото 2 Баландина" style="cursor: default;">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B0%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D0%BD%208%D0%B3/2.png" alt="Фото 2 Баландина" style="cursor: default;">
                     <div class="photo-caption"></div>
                 </div>
                 <div class="photo-item">
-                    <img src="img/BOB/Баландин 8г/3.png" alt="Фото 3 Баландина" style="cursor: default;">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B0%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D0%BD%208%D0%B3/3.png" alt="Фото 3 Баландина" style="cursor: default;">
                     <div class="photo-caption"></div>
                 </div>
             </div>

@@ -189,6 +189,7 @@ body {
     margin-bottom: 30px;
     font-size: 32px;
     font-weight: 700;
+    text-align: center;
 }
 
 .main-content h2 {
@@ -201,12 +202,18 @@ body {
 /* Карточки */
 .card {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    padding: 25px;
+    padding: 40px;
     margin-bottom: 25px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     border-left: 5px solid var(--secondary);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .card:hover {
@@ -219,12 +226,26 @@ body {
     margin-top: 0;
     font-size: 22px;
 }
-
-.card p {
-    margin-bottom: 15px;
-    line-height: 1.7;
+.card h3 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-size: 1.6em;
 }
-
+.card h4 {
+    color: #3498db;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+.card p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+.card p1 {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0;
+}
 /* Галерея изображений */
 .photo-gallery {
     display: grid;
@@ -450,6 +471,11 @@ footer {
 .fade-in {
     animation: fadeIn 0.6s ease;
 }
+.fade-in h2 {
+    text-align: center;
+    margin-top: 50px;
+    color: #1e3c72;
+}
 
 /* Стили для модального окна */
 .modal {
@@ -484,7 +510,58 @@ footer {
     max-width: 400px;
     width: 40%;
 }
-
+.BOB-content {
+    margin-bottom: 40px;
+    text-align: right;
+}
+.BOB-content h2 {
+    text-align: right;
+    color: #1e3c72;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-style: italic;
+}
+.BOB-content h3 {
+    text-align: right;
+    color: #666;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+.CBO-content {
+    position: relative;
+}
+.CDO {
+    float: left;
+    margin: 0 30px 20px 0;
+    width: 300px;
+    text-align: center;
+}
+.CDO img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.CDO p {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    font-style: normal;
+}
+.CKO p {
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    font-style: italic;
+    color: #2c3e50;
+}
+.CKO p1 {
+    font-size: 0.9em;
+    color: #377072;
+    font-style: normal;
+}
 .modal-image {
     max-width: 100%;
     max-height: 500px;
@@ -580,9 +657,10 @@ footer {
 }
 
 .centered-content p {
-    margin-bottom: 20px;
-    font-size: 1.05em;
-    text-align: justify;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.8;
 }
 
 /* Стили для заголовка сайдбара с кнопкой */
