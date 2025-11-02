@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei): Обновление 1.5.01">
+      <change beforePath="$PROJECT_DIR$/project/BOB.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/BOB.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/CBO.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/CBO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/modalmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalmenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/ЗБС.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/ЗБС.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Sirc13/SchoolMusei.git",
+    "accountId": "583109f7-4243-4a5a-8e01-74360a870fbe"
+  }
+}]]></component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "Update",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update(SchoolMusei): Обновление 1.5.01" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei): Обновление 1.5.01" />
+  </component>
+</project>
