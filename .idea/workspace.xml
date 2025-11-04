@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei): Обновление">
+    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei): Обновление 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/BOB.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/BOB.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/CBO.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/CBO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/historySchool(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/historySchool(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/modalDescriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalDescriptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/modalmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/modalmenuCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalMenuCore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/ЗБС.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/ЗБС.html" afterDir="false" />
     </list>
@@ -17,27 +21,51 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Update" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Sirc13/SchoolMusei.git",
-    "accountId": "583109f7-4243-4a5a-8e01-74360a870fbe"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sirc13&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sirc13/SchoolMusei.git&quot;,
+    &quot;accountId&quot;: &quot;583109f7-4243-4a5a-8e01-74360a870fbe&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="350BLb0NeW4m5ARyn6eBds7sYNd" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "Update",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project" />
@@ -48,6 +76,14 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.120" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="update(SchoolMusei): Обновление">
       <option name="closed" value="true" />
@@ -57,12 +93,33 @@
       <option name="project" value="LOCAL" />
       <updated>1762071605582</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update(SchoolMusei): Обновление 2">
+      <option name="closed" value="true" />
+      <created>1762074272124</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762074272124</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei): Обновление 2" />
+      <created>1762237054777</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762237054777</updated>
+      <workItem from="1762237055895" duration="2937000" />
+      <workItem from="1762242208259" duration="129000" />
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update(SchoolMusei): Обновление 1.5.01" />
     <MESSAGE value="update(SchoolMusei): Обновление" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei): Обновление" />
+    <MESSAGE value="update(SchoolMusei): Обновление 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei): Обновление 2" />
   </component>
 </project>
