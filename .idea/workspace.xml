@@ -5,14 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei): Обновление 2">
+      <change afterPath="$PROJECT_DIR$/project/dobro.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/veterans.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/BOB.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/BOB.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/CBO.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/CBO.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/historySchool(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/historySchool(Пустой).html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/modalDescriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalDescriptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/modalmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/modalmenuCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalMenuCore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/auto.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/auto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/day_zdorovia(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/day_zdorovia(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/dobro(Пустой).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/historySchool(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/historySchool.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/holl_b(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/holl_b(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/olimp(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/olimp(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/organization(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/organization(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/patriot(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/patriot(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pdd(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/pdd(Пустой).html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/successSchool(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/successSchool(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/veterans(Пустой).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/vsoch(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/vsoch(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/wins(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/wins(Пустой).html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/ЗБС.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/ЗБС.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,8 +122,18 @@
       <updated>1762237054777</updated>
       <workItem from="1762237055895" duration="2937000" />
       <workItem from="1762242208259" duration="129000" />
+      <workItem from="1762247519316" duration="635000" />
+      <workItem from="1763200172675" duration="3354000" />
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update(SchoolMusei): Обновление 2">
+      <option name="closed" value="true" />
+      <created>1762247535742</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762247535742</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
