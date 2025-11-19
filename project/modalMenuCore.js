@@ -8,7 +8,6 @@ let currentScale = 1;
 
 // Функция для открытия модального окна
 function openModal(imageSrc, title) {
-    console.log('Opening modal with image:', imageSrc, 'title:', title);
 
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
@@ -16,9 +15,9 @@ function openModal(imageSrc, title) {
     const modalDescription = document.getElementById('modalDescription');
 
     if (!modal || !modalImage || !modalTitle || !modalDescription) {
-        console.error('Modal elements not found');
         return;
     }
+
 
     // Устанавливаем изображение и заголовок
     modalImage.src = imageSrc;
@@ -28,29 +27,55 @@ function openModal(imageSrc, title) {
     resetZoom();
 
     // Устанавливаем описание из внешнего файла
-    const description = getModalDescription(title);
-    modalDescription.innerHTML = description;
+    modalDescription.innerHTML = getModalDescription(title);
 
     // Добавляем кнопки управления zoom
     addZoomControls(modalImage);
 
     // Проверяем, создались ли элементы управления
     const controlsContainer = modalImage.parentElement.querySelector('.zoom-controls-container');
-    console.log('Controls container created:', !!controlsContainer);
     if (controlsContainer) {
-        console.log('Controls container children:', controlsContainer.children.length);
     }
 
     // Показываем модальное окно
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 
-    console.log('Modal opened successfully');
+}
+//Открывает картинку
+function openPicture(imageSrc) {
+    console.log('Opening modal with image:', imageSrc);
+
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+
+    if (!modal || !modalImage) {
+        return;
+    }
+
+
+    // Устанавливаем изображение и заголовок
+    modalImage.src = imageSrc;
+
+    // Сбрасываем состояние zoom и позицию
+    resetZoom();
+
+    // Добавляем кнопки управления zoom
+    addZoomControls(modalImage);
+
+    // Проверяем, создались ли элементы управления
+    const controlsContainer = modalImage.parentElement.querySelector('.zoom-controls-container');
+    if (controlsContainer) {
+    }
+
+    // Показываем модальное окно
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+
 }
 
 // Функция для открытия специального модального окна с несколькими фото
 function openSpecialModal(heroName) {
-    console.log('Opening special modal for:', heroName);
 
     const modal = document.getElementById('specialModal');
     const modalTitle = document.getElementById('specialModalTitle');
@@ -58,7 +83,6 @@ function openSpecialModal(heroName) {
     const modalDescription = document.getElementById('specialModalDescription');
 
     if (!modal || !modalTitle || !modalGallery || !modalDescription) {
-        console.error('Special modal elements not found');
         return;
     }
 
@@ -76,13 +100,8 @@ function openSpecialModal(heroName) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 
-    console.log('Special modal opened successfully');
 }
 
-// Функция для открытия модального окна Баландина
-function openBalandinModal() {
-    openSpecialModal('Баландин Александр Иванович');
-}
 
 // Функция добавления кнопок управления zoom
 function addZoomControls(imageElement) {
@@ -97,11 +116,6 @@ function addZoomControls(imageElement) {
     const controlsContainer = document.createElement('div');
     controlsContainer.className = 'zoom-controls-container';
 
-    // Создаем индикатор zoom
-    const zoomIndicator = document.createElement('div');
-    zoomIndicator.className = 'zoom-indicator';
-    zoomIndicator.textContent = '100%';
-    zoomIndicator.style.display = 'none';
 
     // Создаем кнопки управления
     const zoomControls = document.createElement('div');
@@ -119,7 +133,6 @@ function addZoomControls(imageElement) {
     resetBtn.onclick = resetZoom;
 
     // Добавляем элементы в контейнер
-    controlsContainer.appendChild(zoomIndicator);
     controlsContainer.appendChild(zoomControls);
     controlsContainer.appendChild(resetBtn);
 
@@ -135,7 +148,6 @@ function addZoomControls(imageElement) {
     imageElement.addEventListener('mousedown', startDrag);
     imageElement.addEventListener('touchstart', startDragTouch);
 
-    console.log('Zoom controls added successfully');
 }
 
 // Функция сброса zoom и позиции
@@ -143,7 +155,6 @@ function resetZoom() {
     const modalImage = document.getElementById('modalImage');
     if (!modalImage) return;
 
-    const zoomIndicator = modalImage.parentElement?.querySelector('.zoom-indicator');
 
     currentScale = 1;
     translateX = 0;
@@ -152,13 +163,6 @@ function resetZoom() {
     updateImageTransform();
     modalImage.classList.remove('zoomed');
 
-    if (zoomIndicator) {
-        zoomIndicator.textContent = '100%';
-        zoomIndicator.style.display = 'block';
-        setTimeout(() => {
-            zoomIndicator.style.display = 'none';
-        }, 2000);
-    }
 }
 
 // Функция обновления трансформации изображения
@@ -174,19 +178,10 @@ function zoomIn() {
     const modalImage = document.getElementById('modalImage');
     if (!modalImage) return;
 
-    const zoomIndicator = modalImage.parentElement?.querySelector('.zoom-indicator');
-
     currentScale = Math.min(currentScale + 0.5, 3);
     modalImage.classList.toggle('zoomed', currentScale > 1);
     updateImageTransform();
 
-    if (zoomIndicator) {
-        zoomIndicator.textContent = Math.round(currentScale * 100) + '%';
-        zoomIndicator.style.display = 'block';
-        setTimeout(() => {
-            zoomIndicator.style.display = 'none';
-        }, 2000);
-    }
 }
 
 // Функция отдаления
@@ -194,7 +189,6 @@ function zoomOut() {
     const modalImage = document.getElementById('modalImage');
     if (!modalImage) return;
 
-    const zoomIndicator = modalImage.parentElement?.querySelector('.zoom-indicator');
 
     currentScale = Math.max(currentScale - 0.5, 1);
     modalImage.classList.toggle('zoomed', currentScale > 1);
@@ -206,13 +200,6 @@ function zoomOut() {
 
     updateImageTransform();
 
-    if (zoomIndicator) {
-        zoomIndicator.textContent = Math.round(currentScale * 100) + '%';
-        zoomIndicator.style.display = 'block';
-        setTimeout(() => {
-            zoomIndicator.style.display = 'none';
-        }, 2000);
-    }
 }
 
 // Функция переключения zoom по двойному клику
@@ -221,7 +208,6 @@ function toggleZoom(event) {
     const modalImage = document.getElementById('modalImage');
     if (!modalImage) return;
 
-    const zoomIndicator = modalImage.parentElement?.querySelector('.zoom-indicator');
 
     if (currentScale > 1) {
         resetZoom();
@@ -230,13 +216,6 @@ function toggleZoom(event) {
         modalImage.classList.add('zoomed');
         updateImageTransform();
 
-        if (zoomIndicator) {
-            zoomIndicator.textContent = '150%';
-            zoomIndicator.style.display = 'block';
-            setTimeout(() => {
-                zoomIndicator.style.display = 'none';
-            }, 2000);
-        }
     }
 }
 
@@ -246,7 +225,6 @@ function handleWheelZoom(event) {
     const modalImage = document.getElementById('modalImage');
     if (!modalImage) return;
 
-    const zoomIndicator = modalImage.parentElement?.querySelector('.zoom-indicator');
 
     let delta = event.deltaY > 0 ? -0.1 : 0.1;
     currentScale = Math.max(1, Math.min(currentScale + delta, 3));
@@ -254,13 +232,6 @@ function handleWheelZoom(event) {
     modalImage.classList.toggle('zoomed', currentScale > 1);
     updateImageTransform();
 
-    if (zoomIndicator) {
-        zoomIndicator.textContent = Math.round(currentScale * 100) + '%';
-        zoomIndicator.style.display = 'block';
-        setTimeout(() => {
-            zoomIndicator.style.display = 'none';
-        }, 2000);
-    }
 }
 
 // Функции для перемещения изображения
@@ -395,5 +366,4 @@ document.addEventListener('wheel', function (event) {
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Modal core script loaded');
 });

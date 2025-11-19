@@ -503,7 +503,13 @@ footer {
     align-items: flex-start;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-
+.modal-picture{
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
 .modal-image-container {
     flex-shrink: 0;
     max-width: 400px;
@@ -702,6 +708,46 @@ footer {
     flex-shrink: 0;
     position: relative;
 }
+.zoom-btn{
+    background: rgb(52, 152, 219);
+    border: none;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+.zoom-btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+.reset-zoom-btn{
+    background: rgb(52, 152, 219);
+    border: none;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.reset-zoom-btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);}
 
 .menu-toggle:hover {
     background: rgba(255, 255, 255, 0.3);

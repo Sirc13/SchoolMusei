@@ -4,15 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei): Обновление 4">
+    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei): Крупное Обновление 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/day_zdorovia.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/day_zdorovia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/BOB.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/BOB.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/CBO.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/CBO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/archive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/auto.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/auto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/day_zdorovia.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/day_health.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/dobro.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/dobro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/historySchool.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/historySchool.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/holl_b(Пустой).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/modalMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/modalMenuCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/modalMenuCore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/olimp(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/olimp(Пустой).html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/organization(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/organization(Пустой).html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/patriot(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/patriot(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/successSchool(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/successSchool(Пустой).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/veterans.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/veterans.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/vsoch(Пустой).html" beforeDir="false" afterPath="$PROJECT_DIR$/project/vsoch(Пустой).html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/wins(Пустой).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/ЗБС.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/ЗБС.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +128,8 @@
       <workItem from="1763213569707" duration="359000" />
       <workItem from="1763213935767" duration="455000" />
       <workItem from="1763383017517" duration="443000" />
-      <workItem from="1763474641960" duration="5820000" />
+      <workItem from="1763474641960" duration="5989000" />
+      <workItem from="1763559428497" duration="3281000" />
     </task>
     <task id="LOCAL-00003" summary="update(SchoolMusei): Обновление 2">
       <option name="closed" value="true" />
@@ -158,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763480497546</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update(SchoolMusei): Обновление 4.5">
+      <option name="closed" value="true" />
+      <created>1763482418423</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763482418423</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +193,8 @@
     <MESSAGE value="update(SchoolMusei): Обновление 3.1" />
     <MESSAGE value="update(SchoolMusei): Обновление 3.15" />
     <MESSAGE value="update(SchoolMusei): Обновление 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei): Обновление 4" />
+    <MESSAGE value="update(SchoolMusei): Обновление 4.5" />
+    <MESSAGE value="update(SchoolMusei): Крупное Обновление 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei): Крупное Обновление 1" />
   </component>
 </project>

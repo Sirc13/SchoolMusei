@@ -36,7 +36,7 @@
                         <a>Традиции школы</a>
                         <ul class="submenu">
                             <li><a href="auto.html">Автошкола</a></li>
-                            <li><a href="day_zdorovia.html">День здоровья</a></li>
+                            <li><a href="day_health.html">День здоровья</a></li>
                             <li><a href="veterans.html">Встречи с ветеранами</a></li>
                         </ul>
                     </li>
@@ -55,15 +55,27 @@
         <!-- Основное содержимое -->
         <div class="main-content" id="mainContent">
              <h1>Автошкола</h1>
-            <img src="https://sun9-10.userapi.com/impf/c604325/v604325135/12bbf/7mu_xxLkcKo.jpg?size=604x402&quality=96&sign=2841f43474c2b37e3c35b0d7cdf0c25e&type=album" class="auto_photo"/>
+            <img src="https://sun9-10.userapi.com/impf/c604325/v604325135/12bbf/7mu_xxLkcKo.jpg?size=604x402&quality=96&sign=2841f43474c2b37e3c35b0d7cdf0c25e&type=album" alt="">
             <video width="80%" height="40%" src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/auto1.mp4" controls></video>
         </div>
     </div>
-    
-    <footer>
-        © 2025 Сайт принадлежит МОУ СОШ №18. Все права защищены.
-    </footer>
 
-    <script src = "menu.js"></script>
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-picture">
+            <img id="modalImage" class="modal-image" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2025 Сайт принадлежит МОУ СОШ №18. Все права защищены.
+</footer>
+
+<script src="modalMenuCore.js"></script>
+<script src="modalDescriptions.js"></script>
+<script src = "menu.js"></script>
+
 </body>
 </html>
