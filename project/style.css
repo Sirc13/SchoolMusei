@@ -236,6 +236,11 @@ body {
     margin-bottom: 20px;
     font-size: 1.6em;
 }
+.card h5 {
+    color: #e8cb12;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
 .card p {
     margin: 0;
     line-height: 1.6;
