@@ -6,45 +6,8 @@ let startX, startY;
 let translateX = 0, translateY = 0;
 let currentScale = 1;
 
-// Функция для открытия модального окна
-function openModal(imageSrc, title) {
-
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-
-    if (!modal || !modalImage || !modalTitle || !modalDescription) {
-        return;
-    }
-
-
-    // Устанавливаем изображение и заголовок
-    modalImage.src = imageSrc;
-    modalTitle.textContent = title;
-
-    // Сбрасываем состояние zoom и позицию
-    resetZoom();
-
-    // Устанавливаем описание из внешнего файла
-    modalDescription.innerHTML = getModalDescription(title);
-
-    // Добавляем кнопки управления zoom
-    addZoomControls(modalImage);
-
-    // Проверяем, создались ли элементы управления
-    const controlsContainer = modalImage.parentElement.querySelector('.zoom-controls-container');
-    if (controlsContainer) {
-    }
-
-    // Показываем модальное окно
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-
-}
 //Открывает картинку
 function openPicture(imageSrc) {
-    console.log('Opening modal with image:', imageSrc);
 
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
@@ -63,10 +26,7 @@ function openPicture(imageSrc) {
     // Добавляем кнопки управления zoom
     addZoomControls(modalImage);
 
-    // Проверяем, создались ли элементы управления
-    const controlsContainer = modalImage.parentElement.querySelector('.zoom-controls-container');
-    if (controlsContainer) {
-    }
+
 
     // Показываем модальное окно
     modal.style.display = 'block';
@@ -74,33 +34,25 @@ function openPicture(imageSrc) {
 
 }
 
-// Функция для открытия специального модального окна с несколькими фото
-function openSpecialModal(heroName) {
+function openSpecialPicture(heroName) {
 
     const modal = document.getElementById('specialModal');
-    const modalTitle = document.getElementById('specialModalTitle');
     const modalGallery = document.getElementById('specialModalGallery');
-    const modalDescription = document.getElementById('specialModalDescription');
 
-    if (!modal || !modalTitle || !modalGallery || !modalDescription) {
+    if (!modal || !modalGallery) {
         return;
     }
 
-    // Устанавливаем заголовок
-    modalTitle.textContent = heroName;
 
     // Получаем галерею и описание из внешнего файла
-    const galleryHTML = getSpecialModalGallery(heroName);
-    const descriptionHTML = getSpecialModalDescription(heroName);
-
-    modalGallery.innerHTML = galleryHTML;
-    modalDescription.innerHTML = descriptionHTML;
+    modalGallery.innerHTML = getSpecialModalGallery(heroName);
 
     // Показываем модальное окно
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 
 }
+
 
 
 // Функция добавления кнопок управления zoom
