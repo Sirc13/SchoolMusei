@@ -44,6 +44,19 @@ function getSpecialModalGallery(heroName) {
             </div>
         `;
     }
+    if (heroName === 'Виноградов Л. А.') {
+        galleryHTML = `
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/6.jpg" alt="" style="cursor: default;">
+                </div>
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/4.jpg" alt="" style="cursor: default;">
+                </div>
+               
+            </div>
+        `;
+    }
     if (heroName === 'Бральнин') {
         galleryHTML = `
             <div class="photo-gallery">

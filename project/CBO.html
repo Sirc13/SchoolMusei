@@ -25,14 +25,14 @@
                 <a>Зал трудовой славы</a>
                 <ul class="submenu">
                     <li class="has-submenu">
-                        <a href="organization(Пустой).html">Организации школы</a>
+                        <a href="organization.html">Организации школы</a>
                         <ul class="submenu">
-                            <li><a href="patriot(Пустой).html">Патриотика</a></li>
+                            <li><a href="patriot.html">Патриотика</a></li>
 
                             <li><a href="dobro.html">Волонтерство</a></li>
                         </ul>
                     </li>
-                    <li><a href="successSchool(Пустой).html">Гордость школы</a></li>
+                    <li><a href="successSchool.html">Гордость школы</a></li>
                     <li><a href="dynasty.html">Династия учителей</a></li>
                     <li class="has-submenu">
                         <a>Традиции школы</a>
@@ -46,8 +46,8 @@
                     <li class="has-submenu">
                         <a>Наши победы</a>
                         <ul class="submenu">
-                            <li><a href="vsoch(Пустой).html">ВСОШ</a></li>
-                            <li><a href="olimp(Пустой).html">Олимпиады и конкурсы</a></li>
+                            <li><a href="vsoch.html">ВСОШ</a></li>
+                            <li><a href="olimp.html">Олимпиады и конкурсы</a></li>
                         </ul>
                     </li>
 
@@ -106,16 +106,16 @@
         <!-- Галерея фотографий -->
         <div class="fade-in">
             <div class="photo-gallery">
-                <div class="photo-item" onclick="openModal('https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/3.jpg', 'Ломтев Михаил Юрьевич')">
+                <div class="photo-item" onclick="openPicture('https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/3.jpg')">
                     <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/3.jpg" alt="Ломтев М. Ю">
                     <div class="photo-caption"><strong>Ломтев М. Ю.</strong></div>
                 </div>
-                <div class="photo-item" onclick="openModal('https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/5.jpg', 'Василюк Павел Сергеевич')">
+                <div class="photo-item" onclick="openPicture('https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/5.jpg')">
                     <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/5.jpg" alt="Василюк П. С.">
                     <div class="photo-caption"><strong>Василюк П. С.</strong></div>
                 </div>
-                <div class="photo-item" onclick="openModal('https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/4.jpg', 'Виноградов Лев Александрович')">
-                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/4.jpg" alt="Виноградов Л. А.">
+                <div class="photo-item" onclick="openSpecialPicture('Виноградов Л. А.')">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%A1%D0%92%D0%9E/6.jpg" alt="Виноградов Л. А.">
                     <div class="photo-caption"><strong>Виноградов Л. А.</strong></div>
                 </div>
             </div>
@@ -127,13 +127,16 @@
 <div id="imageModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-image-container">
+        <div class="modal-picture">
             <img id="modalImage" class="modal-image" src="" alt="">
         </div>
+    </div>
+</div>
+<div id="specialModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSpecialModal()">&times;</span>
         <div class="modal-text">
-            <h3 id="modalTitle"></h3>
-            <p id="modalDescription">
-            </p>
+            <div id="specialModalGallery"></div>
         </div>
     </div>
 </div>
@@ -143,6 +146,7 @@
 </footer>
 
 <script src="modalMenuCore.js"></script>
+<script src="SpecialPicture.js"></script>
 <script src = "menu.js"></script>
 
 </body>
