@@ -31,6 +31,31 @@ function getSpecialModalGallery(heroName) {
             </div>
         `;
     }
+    if (heroName === 'Жуков') {
+        galleryHTML = `
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B5%D1%81%D1%8F%D0%BD%D0%BE%D0%B2%208%D0%B1/1.png" alt="" style="cursor: default;">
+                </div>
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B5%D1%81%D1%8F%D0%BD%D0%BE%D0%B2%208%D0%B1/2.png" alt="" style="cursor: default;">
+                </div>
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B5%D1%81%D1%8F%D0%BD%D0%BE%D0%B2%208%D0%B1/3.png" alt="" style="cursor: default;">
+                </div>
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B5%D1%81%D1%8F%D0%BD%D0%BE%D0%B2%208%D0%B1/4.png" alt="" style="cursor: default;">
+                </div>
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B5%D1%81%D1%8F%D0%BD%D0%BE%D0%B2%208%D0%B1/5.png" alt="" style="cursor: default;">
+                </div>
+                <div class="photo-item">
+                    <img src="https://4f267ac3-df8d-4c1e-a7b5-da5d95a9ecd1.selstorage.ru/%D0%92%D0%9E%D0%92/1%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%91%D0%B5%D1%81%D1%8F%D0%BD%D0%BE%D0%B2%208%D0%B1/6.png" alt="" style="cursor: default;">
+                </div>
+               
+            </div>
+        `;
+    }
     if (heroName === 'Баумгертнер С.') {
         galleryHTML = `
             <div class="photo-gallery">

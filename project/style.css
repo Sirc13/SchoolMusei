@@ -251,6 +251,16 @@ body {
     line-height: 1.6;
     margin: 0;
 }
+.card h5 {
+    color: #eed12a;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+.card h6 {
+    color: #2eaef4;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
 /* Галерея изображений */
 .photo-gallery {
     display: grid;
@@ -269,11 +279,11 @@ body {
 .photo-item:hover {
     transform: scale(1.03);
 }
-
+.photo-centered {
+}
 .photo-item img {
-    width: 50%;
+    width: 75%;
     height: 100%;
-    object-fit: cover;
     display: block;
     text-align: center;
 }
