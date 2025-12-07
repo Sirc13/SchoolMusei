@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei):  Обновление 2.11">
-      <change beforePath="$PROJECT_DIR$/project/teacherYear.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/teacherYear.html" afterDir="false" />
+    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei):  Обновление 2.12">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/BOB.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/BOB.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/SpecialPicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/SpecialPicture.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +133,8 @@
       <workItem from="1764164567315" duration="4644000" />
       <workItem from="1764781968523" duration="2695000" />
       <workItem from="1764931436230" duration="2681000" />
-      <workItem from="1764934365144" duration="364000" />
+      <workItem from="1764934365144" duration="861000" />
+      <workItem from="1765118035123" duration="10149000" />
     </task>
     <task id="LOCAL-00003" summary="update(SchoolMusei): Обновление 2">
       <option name="closed" value="true" />
@@ -245,7 +248,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764934725610</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update(SchoolMusei):  Обновление 2.11">
+      <option name="closed" value="true" />
+      <created>1764934751391</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1764934751394</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update(SchoolMusei):  Обновление 2.12">
+      <option name="closed" value="true" />
+      <created>1764935151734</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1764935151734</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +287,8 @@
     <MESSAGE value="update(SchoolMusei):  Обновление 2" />
     <MESSAGE value="update(SchoolMusei):  Обновление 2.1" />
     <MESSAGE value="update(SchoolMusei):  Обновление 2.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei):  Обновление 2.11" />
+    <MESSAGE value="update(SchoolMusei):  Обновление 2.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei):  Обновление 2.12" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
