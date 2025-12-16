@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei):  Обновление 2.12">
+    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="update(SchoolMusei):  Обновление 3.5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/BOB.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/BOB.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/SpecialPicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/SpecialPicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/archive.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,24 +52,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.CBO.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.teacherYear.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kuryl/WebstormProjects/SchoolMusei/project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.CBO.html.executor": "Run",
+    "JavaScript Debug.archive.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Debug",
+    "JavaScript Debug.teacherYear.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/kuryl/WebstormProjects/SchoolMusei/project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project" />
@@ -134,7 +134,14 @@
       <workItem from="1764781968523" duration="2695000" />
       <workItem from="1764931436230" duration="2681000" />
       <workItem from="1764934365144" duration="861000" />
-      <workItem from="1765118035123" duration="10149000" />
+      <workItem from="1765118035123" duration="10305000" />
+      <workItem from="1765196071646" duration="1980000" />
+      <workItem from="1765384863823" duration="154000" />
+      <workItem from="1765479673939" duration="2226000" />
+      <workItem from="1765560997235" duration="675000" />
+      <workItem from="1765710428787" duration="1000" />
+      <workItem from="1765727588581" duration="3373000" />
+      <workItem from="1765895537001" duration="1449000" />
     </task>
     <task id="LOCAL-00003" summary="update(SchoolMusei): Обновление 2">
       <option name="closed" value="true" />
@@ -264,7 +271,31 @@
       <option name="project" value="LOCAL" />
       <updated>1764935151734</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update(SchoolMusei):  Обновление 2.5">
+      <option name="closed" value="true" />
+      <created>1765129261122</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1765129261122</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update(SchoolMusei):  Обновление 3 без однофамильцев">
+      <option name="closed" value="true" />
+      <created>1765481306435</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1765481306435</updated>
+    </task>
+    <task id="LOCAL-00021" summary="update(SchoolMusei):  Обновление 3.5">
+      <option name="closed" value="true" />
+      <created>1765730978415</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1765730978415</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +319,10 @@
     <MESSAGE value="update(SchoolMusei):  Обновление 2.1" />
     <MESSAGE value="update(SchoolMusei):  Обновление 2.11" />
     <MESSAGE value="update(SchoolMusei):  Обновление 2.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei):  Обновление 2.12" />
+    <MESSAGE value="update(SchoolMusei):  Обновление 2.5" />
+    <MESSAGE value="update(SchoolMusei):  Обновление 3 без однофамильцев" />
+    <MESSAGE value="update(SchoolMusei):  Обновление 3.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(SchoolMusei):  Обновление 3.5" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
