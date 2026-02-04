@@ -1,6 +1,6 @@
 // menu.js
 // Инициализация правильной иконки при загрузке
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const sidebar = document.getElementById('sidebar');
     const menuToggle = document.getElementById('menuToggle');
 
@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
             <span></span>
             <span></span>
         `;
-        
+
         document.body.appendChild(mobileToggle);
-        
+
         // Обработчик для мобильной кнопки
-        mobileToggle.addEventListener('click', function(e) {
+        mobileToggle.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            
+
             const sidebar = document.getElementById('sidebar');
             const isCollapsed = sidebar.classList.contains('collapsed');
-            
+
             if (isCollapsed) {
                 // Если меню скрыто - открываем его
                 sidebar.classList.remove('collapsed');
@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileToggle.classList.remove('active');
                 mobileToggle.title = 'Открыть меню';
             }
-            
+
             // Сохраняем состояние в localStorage
             localStorage.setItem('sidebarCollapsed', !isCollapsed);
         });
-        
+
         return mobileToggle;
     }
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sidebarHeader) {
             const headerContainer = document.createElement('div');
             headerContainer.className = 'sidebar-header';
-            
+
             const toggle = document.createElement('button');
             toggle.className = 'menu-toggle';
             toggle.id = 'menuToggle';
@@ -71,13 +71,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span></span>
                 <span></span>
             `;
-            
+
             // Всегда добавляем заголовок, но на мобильных скроем кнопку через CSS
             headerContainer.appendChild(sidebarHeader.cloneNode(true));
             headerContainer.appendChild(toggle);
             sidebar.insertBefore(headerContainer, sidebar.querySelector('ul'));
             sidebar.removeChild(sidebarHeader);
-            
+
             // Добавляем обработчик для созданной кнопки
             toggle.addEventListener('click', toggleMenu);
             return toggle;
@@ -90,19 +90,19 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             e.stopPropagation();
         }
-        
+
         const sidebar = document.getElementById('sidebar');
         sidebar.classList.toggle('collapsed');
-        
+
         const currentToggle = document.getElementById('menuToggle');
         const mobileToggle = document.getElementById('mobileMenuToggle');
-        
+
         // Только для десктопа управляем кнопкой в сайдбаре
         if (currentToggle && window.innerWidth > 768) {
             currentToggle.classList.toggle('active');
             currentToggle.title = sidebar.classList.contains('collapsed') ? 'Развернуть меню' : 'Свернуть меню';
         }
-        
+
         // Управляем мобильной кнопкой
         if (mobileToggle) {
             if (sidebar.classList.contains('collapsed')) {
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileToggle.title = 'Закрыть меню';
             }
         }
-        
+
         // Сохраняем состояние в localStorage
         localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
     }
@@ -127,17 +127,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Восстанавливаем состояние меню из localStorage
     const savedState = localStorage.getItem('sidebarCollapsed');
     const isMobile = window.innerWidth <= 768;
-    
+
     if (savedState === 'true') {
         // Меню свернуто
         sidebar.classList.add('collapsed');
         const mobileToggle = document.getElementById('mobileMenuToggle');
-        
+
         if (mobileToggle) {
             mobileToggle.classList.remove('active');
             mobileToggle.title = 'Открыть меню';
         }
-        
+
         // Для десктопа обновляем кнопку в сайдбаре
         if (!isMobile) {
             const currentToggle = document.getElementById('menuToggle');
@@ -149,12 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         // Меню развернуто
         const mobileToggle = document.getElementById('mobileMenuToggle');
-        
+
         if (mobileToggle) {
             mobileToggle.classList.add('active');
             mobileToggle.title = 'Закрыть меню';
         }
-        
+
         // Для десктопа обновляем кнопку в сайдбаре
         if (!isMobile) {
             const currentToggle = document.getElementById('menuToggle');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Добавляем обработчики для подменю
     const hasSubmenuItems = document.querySelectorAll('.has-submenu > a');
     hasSubmenuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
+        item.addEventListener('click', function (e) {
             // Проверяем, был ли клик по самому элементу или его потомкам
             if (e.target === this || this.contains(e.target)) {
                 e.preventDefault();
@@ -199,11 +199,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Закрытие меню при клике вне его области (для мобильных устройств)
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (window.innerWidth <= 768) {
             const sidebar = document.getElementById('sidebar');
             const mobileToggle = document.getElementById('mobileMenuToggle');
-            
+
             if (sidebar && !sidebar.contains(e.target) && mobileToggle && !mobileToggle.contains(e.target)) {
                 if (!sidebar.classList.contains('collapsed')) {
                     toggleMenu();
@@ -213,12 +213,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Обработчик изменения размера окна
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         const isNowMobile = window.innerWidth <= 768;
         const sidebar = document.getElementById('sidebar');
         const mobileToggle = document.getElementById('mobileMenuToggle');
         const menuToggle = document.getElementById('menuToggle');
-        
+
         // Скрываем/показываем кнопку в сайдбаре в зависимости от размера экрана
         if (menuToggle) {
             if (isNowMobile) {
@@ -227,12 +227,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuToggle.style.display = 'flex';
             }
         }
-        
+
         if (isNowMobile) {
             // Переключились на мобильный вид
             // Кнопка в сайдбаре скрывается через CSS
             // Заголовок "Меню" остается видимым
-            
+
             // Восстанавливаем состояние мобильного меню
             const savedState = localStorage.getItem('sidebarCollapsed');
             if (savedState === 'true') {
@@ -251,17 +251,17 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Переключились на десктопный вид
             // Кнопка в сайдбаре показывается через CSS
-            
+
             // На десктопе всегда показываем меню развернутым
             if (sidebar && sidebar.classList.contains('collapsed')) {
                 sidebar.classList.remove('collapsed');
             }
-            
+
             if (mobileToggle) {
                 mobileToggle.classList.add('active');
                 mobileToggle.title = 'Закрыть меню';
             }
-            
+
             // Обновляем кнопку в сайдбаре
             if (menuToggle) {
                 menuToggle.classList.add('active');

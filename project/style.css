@@ -45,7 +45,7 @@ body {
     height: 300px;
     padding: 15px 30px;
     color: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 100;
 }
@@ -53,7 +53,7 @@ body {
 .page-header h1 {
     color: #15066a;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
     padding: 15px 30px;
     border-radius: 10px;
 }
@@ -62,7 +62,7 @@ body {
     font-size: 28px;
     font-weight: 700;
     margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Боковое меню */
@@ -70,7 +70,7 @@ body {
     width: auto;
     background: linear-gradient(180deg, var(--secondary) 0%, #2980b9 100%);
     padding: 25px 20px;
-    box-shadow: 3px 0 10px rgba(0,0,0,0.1);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
     flex-shrink: 0;
@@ -123,7 +123,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -132,7 +132,7 @@ body {
 }
 
 .sidebar a:hover {
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255, 255, 255, 0.15);
     transform: translateX(5px);
 }
 
@@ -143,8 +143,14 @@ body {
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .submenu li {
@@ -154,12 +160,12 @@ body {
 .submenu a {
     font-weight: normal;
     padding: 8px 12px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     font-size: 0.9em;
 }
 
 .submenu a:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .has-submenu > a::after {
@@ -178,7 +184,7 @@ body {
     padding: 40px;
     background-color: white;
     transition: margin-left 0.3s ease;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
     overflow-y: auto;
 }
 
@@ -205,7 +211,7 @@ body {
     padding: 40px;
     margin-bottom: 25px;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     border-left: 5px solid var(--secondary);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -218,7 +224,7 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
@@ -226,45 +232,53 @@ body {
     margin-top: 0;
     font-size: 22px;
 }
+
 .card h3 {
     color: #e74c3c;
     margin-bottom: 20px;
     font-size: 1.6em;
 }
+
 .card h4 {
     color: #3498db;
     margin-bottom: 20px;
     font-size: 1.6em;
 }
+
 .card h5 {
     color: #e8cb12;
     margin-bottom: 20px;
     font-size: 1.6em;
 }
+
 .card p {
     margin: 0;
     line-height: 1.6;
     font-size: 1.1em;
 }
+
 .card p1 {
     font-size: 1.1em;
     line-height: 1.6;
     margin: 0;
 }
+
 .card h5 {
     color: #eed12a;
     margin-bottom: 20px;
     font-size: 1.6em;
 }
+
 .card h6 {
     color: #2eaef4;
     margin-bottom: 20px;
     font-size: 1.6em;
 }
+
 /* Галерея изображений */
 .photo-gallery {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -279,8 +293,10 @@ body {
 .photo-item:hover {
     transform: scale(1.03);
 }
+
 .photo-centered {
 }
+
 .photo-item img {
     width: 75%;
     height: 100%;
@@ -323,7 +339,7 @@ footer {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     flex-direction: column;
     justify-content: center;
@@ -364,7 +380,7 @@ footer {
     width: 100%;
     max-width: 600px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
     display: block;
 }
@@ -405,7 +421,7 @@ footer {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
@@ -479,13 +495,18 @@ footer {
 
 /* Анимации */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .fade-in {
     animation: fadeIn 0.6s ease;
 }
+
 .fade-in h2 {
     text-align: center;
     margin-top: 50px;
@@ -501,7 +522,7 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     overflow-y: auto;
 }
 
@@ -517,24 +538,28 @@ footer {
     display: flex;
     gap: 30px;
     align-items: flex-start;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-.modal-picture{
+
+.modal-picture {
     max-width: 100%;
     max-height: 80vh;
     display: block;
     margin: 0 auto;
     text-align: center;
 }
+
 .modal-image-container {
     flex-shrink: 0;
     max-width: 400px;
     width: 40%;
 }
+
 .BOB-content {
     margin-bottom: 40px;
     text-align: right;
 }
+
 .BOB-content h2 {
     text-align: right;
     color: #1e3c72;
@@ -543,6 +568,7 @@ footer {
     font-weight: normal;
     font-style: italic;
 }
+
 .BOB-content h3 {
     text-align: right;
     color: #666;
@@ -550,10 +576,12 @@ footer {
     font-weight: normal;
     margin-bottom: 30px;
 }
-.SS-content{
+
+.SS-content {
     margin-bottom: 40px;
     text-align: right;
 }
+
 .SS-content h1 {
     color: #1e3c72;
     font-size: 1.8em;
@@ -561,6 +589,7 @@ footer {
     font-weight: normal;
     font-style: italic;
 }
+
 .SS-content h2 strong1 {
     float: right;
     color: #f8e514;
@@ -569,6 +598,7 @@ footer {
     font-weight: normal;
     font-style: italic;
 }
+
 .SS-content h2 strong {
     float: left;
     text-align: left;
@@ -578,27 +608,32 @@ footer {
     font-weight: normal;
     font-style: italic;
 }
+
 .CBO-content {
     position: relative;
 }
+
 .CDO {
     float: left;
     margin: 0 30px 20px 0;
     width: 300px;
     text-align: center;
 }
+
 .CDO img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 .CDO p {
     font-size: 0.9em;
     color: #666;
     margin-top: 10px;
     font-style: normal;
 }
+
 .CKO p {
     font-size: 1em;
     line-height: 1.4;
@@ -606,11 +641,13 @@ footer {
     font-style: italic;
     color: #2c3e50;
 }
+
 .CKO p1 {
     font-size: 0.9em;
     color: #377072;
     font-style: normal;
 }
+
 .modal-image {
     max-width: 100%;
     max-height: 500px;
@@ -618,7 +655,7 @@ footer {
     height: auto;
     border-radius: 8px;
     display: block;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .modal-text {
@@ -667,7 +704,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -711,11 +748,12 @@ footer {
     text-align: center;
     line-height: 1.8;
 }
+
 .centered-content img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-header {
@@ -723,7 +761,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    border-bottom: 2px solid rgba(255,255,255,0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 15px;
 }
 
@@ -752,27 +790,8 @@ footer {
     flex-shrink: 0;
     position: relative;
 }
-.zoom-btn{
-    background: rgb(52, 152, 219);
-    border: none;
-    border-radius: 5px;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    position: relative;
-}
-.zoom-btn:hover{
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
-}
-.reset-zoom-btn{
+
+.zoom-btn {
     background: rgb(52, 152, 219);
     border: none;
     border-radius: 5px;
@@ -789,9 +808,32 @@ footer {
     position: relative;
 }
 
-.reset-zoom-btn:hover{
+.zoom-btn:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);}
+    transform: scale(1.1);
+}
+
+.reset-zoom-btn {
+    background: rgb(52, 152, 219);
+    border: none;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.reset-zoom-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
 
 .menu-toggle:hover {
     background: rgba(255, 255, 255, 0.3);
@@ -873,59 +915,59 @@ footer {
         z-index: 10;
         width: 280px;
     }
-    
+
     .sidebar.collapsed {
         transform: translateX(-100%);
     }
-    
+
     .main-content {
         padding: 20px;
         margin-left: 0 !important;
     }
-    
+
     .photo-gallery {
         grid-template-columns: 1fr;
     }
-    
+
     .header-title {
         font-size: 22px;
     }
-    
+
     .header-photo {
         width: 50px;
         height: 50px;
     }
-    
+
     /* Показываем кнопку только на мобильных устройствах */
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     /* Корректируем отступы для шапки при наличии кнопки */
     .page-header {
         padding-left: 80px;
     }
-    
+
     /* Скрываем кнопку меню в сайдбаре на мобильных устройствах */
     .menu-toggle {
         display: none !important;
     }
-    
+
     /* Убираем flex-распределение для заголовка на мобильных */
     .sidebar-header {
         display: block;
         text-align: center;
         padding-bottom: 15px;
         margin-bottom: 20px;
-        border-bottom: 2px solid rgba(255,255,255,0.3);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     }
-    
+
     .sidebar-header h2 {
         display: block !important;
         text-align: center;
         margin: 0;
     }
-    
+
     /* Убираем отступы у сайдбара на мобильных */
     .sidebar {
         padding: 20px 15px;
@@ -940,15 +982,15 @@ footer {
         top: 15px;
         left: 15px;
     }
-    
+
     .mobile-menu-toggle.active span:nth-child(1) {
         transform: translateY(5px) rotate(45deg);
     }
-    
+
     .mobile-menu-toggle.active span:nth-child(3) {
         transform: translateY(-5px) rotate(-45deg);
     }
-    
+
     .sidebar {
         width: 260px;
         padding: 15px 10px;
@@ -963,12 +1005,12 @@ footer {
         gap: 25px;
         padding: 25px;
     }
-    
+
     .modal-image-container {
         max-width: 350px;
         width: 45%;
     }
-    
+
     .modal-image {
         max-height: 450px;
     }
@@ -982,28 +1024,28 @@ footer {
         padding: 20px;
         gap: 20px;
     }
-    
+
     .modal-image-container {
         max-width: 100%;
         width: 100%;
         text-align: center;
     }
-    
+
     .modal-image {
         max-height: 400px;
         margin: 0 auto 15px;
     }
-    
+
     .modal-text {
         max-height: 60vh;
         padding: 10px;
         font-size: 1em;
     }
-    
+
     .modal-text h3 {
         font-size: 1.5em;
     }
-    
+
     .close {
         right: 15px;
         top: 10px;
@@ -1019,12 +1061,12 @@ footer {
         width: 98%;
         padding: 15px;
     }
-    
+
     .modal-text {
         font-size: 0.95em;
         line-height: 1.7;
     }
-    
+
     .modal-text h3 {
         font-size: 1.3em;
     }

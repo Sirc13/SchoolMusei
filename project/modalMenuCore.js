@@ -27,7 +27,6 @@ function openPicture(imageSrc) {
     addZoomControls(modalImage);
 
 
-
     // Показываем модальное окно
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -52,7 +51,6 @@ function openSpecialPicture(heroName) {
     document.body.style.overflow = 'hidden';
 
 }
-
 
 
 // Функция добавления кнопок управления zoom
