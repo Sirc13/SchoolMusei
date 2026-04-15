@@ -294,6 +294,7 @@ body {
     flex-direction: column;
     height: fit-content;
     cursor: pointer;
+    z-index: 999;
 }
 
 .photo-item:hover {
@@ -551,6 +552,7 @@ footer {
     display: block;
     margin: 0 auto;
     text-align: center;
+
 }
 
 .modal-image-container {
@@ -863,18 +865,16 @@ footer {
 }
 /* Контейнер для элементов управления zoom */
 .zoom-controls-container {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
     padding: 10px 15px;
     display: flex !important;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #ddd;
     border-radius: 0 0 8px 8px;
-    z-index: 1000;
+    z-index: 100;
 }
 
 /* Кнопки управления zoom */
