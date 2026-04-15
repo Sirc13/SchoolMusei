@@ -12,6 +12,19 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text);
+    line-height: 1.6;
 }
 
 .wrapper {
@@ -647,6 +660,56 @@ footer {
     color: #377072;
     font-style: normal;
 }
+/* Фиксируем контейнер в верхнем правом углу */
+.cube-container {
+    position: absolute;
+    top: 20px;     /* Отступ сверху */
+    right: 20px;   /* Отступ справа */
+    z-index: 9999; /* Чтобы куб был поверх всего контента */
+}
+
+/* Область ссылки и 3D-пространство (маленький размер) */
+.cube-link {
+    width: 50px;
+    height: 50px;
+    perspective: 400px;
+    text-decoration: none;
+    display: block;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    /* Сразу немного наклоняем для объема */
+    transform: rotateX(-20deg) rotateY(-20deg);
+}
+
+/* Вращение при наведении */
+.cube-link:hover .cube {
+    transform: rotateX(180deg) rotateY(360deg);
+}
+
+/* Общие стили черных граней */
+.face {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #222 0%, #000 100%);
+    border: 1px solid #444; /* Тонкие ребра */
+    box-sizing: border-box;
+}
+
+/* Расстановка граней (половина от 50px = 25px) */
+.front  { transform: translateZ(25px); }
+.back   { transform: rotateY(180deg) translateZ(25px); }
+.right  { transform: rotateY(90deg) translateZ(25px); }
+.left   { transform: rotateY(-90deg) translateZ(25px); }
+.top    { transform: rotateX(90deg) translateZ(25px); }
+.bottom { transform: rotateX(-90deg) translateZ(25px); }
+
 
 .modal-image {
     max-width: 40%;
