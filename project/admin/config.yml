@@ -140,43 +140,43 @@ collections:
         label: "1.html"
         file: "project/Maik31/1.html"
         fields:
-          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: [ "code" ] }
 
       - name: "2"
         label: "2.html"
         file: "project/Maik31/2.html"
         fields:
-          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: [ "code" ] }
 
       - name: "Feb2018"
         label: "Feb2018.html"
         file: "project/Maik31/Feb2018.html"
         fields:
-          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: [ "code" ] }
 
       - name: "M2018"
         label: "M2018.html"
         file: "project/Maik31/M2018.html"
         fields:
-          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: [ "code" ] }
 
       - name: "2022"
         label: "2022.html"
         file: "project/Maik31/2022.html"
         fields:
-          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: [ "code" ] }
 
       - name: "2023"
         label: "2023.html"
         file: "project/Maik31/2023.html"
         fields:
-          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: [ "code" ] }
 
       - name: "2024"
         label: "2024.html"
         file: "project/Maik31/2024.html"
         fields:
-          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: [ "code" ] }
 
   # ========== CSS ФАЙЛЫ ==========
   - name: "styles"
@@ -211,3 +211,19 @@ collections:
         file: "project/SpecialPicture.js"
         fields:
           - { label: "Код JS", name: "body", widget: "markdown", modes: ["code"] }
+
+  - name: "admin"
+    label: "⚙️ Admin"
+    label_singular: "Админ"
+    files:
+      - name: "index"
+        label: "index.html"
+        file: "project/admin/index.html"
+        fields:
+          - { label: "Код Администрации", name: "body", widget: "markdown", modes: [ "code" ] }
+
+      - name: "config"
+        label: "config.yml"
+        file: "project/admin/config.yml"
+        fields:
+          - { label: "Код Администрации", name: "body", widget: "markdown", modes: [ "code" ] }
