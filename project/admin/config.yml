@@ -221,9 +221,3 @@ collections:
         file: "project/admin/index.html"
         fields:
           - { label: "Код Администрации", name: "body", widget: "markdown", modes: [ "code" ] }
-
-      - name: "config"
-        label: "config.yml"
-        file: "project/admin/config.yml"
-        fields:
-          - { label: "Код Администрации", name: "body", widget: "markdown", modes: [ "code" ] }
