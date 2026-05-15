@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Sirc13/SchoolMusei  # например: ivanov/moy-sait
+  repo: Sirc13/SchoolMusei
   branch: main
 
 media_folder: "images/uploads"
