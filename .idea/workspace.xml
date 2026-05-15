@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="feat(SchoolMusei): точно не хаха">
+    <list default="true" id="8f6b53f4-4fb3-491e-9b83-db8b921c0dee" name="Changes" comment="test(SchoolMusei): Test new panel 5.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,10 +85,10 @@
       <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project\gp" />
-      <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project" />
-      <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\.idea" />
       <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei" />
+      <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project" />
+      <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project\gp" />
+      <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\.idea" />
       <recent name="C:\Users\kuryl\WebstormProjects\SchoolMusei\project\avi" />
     </key>
   </component>
@@ -169,7 +168,7 @@
       <workItem from="1776271356267" duration="1726000" />
       <workItem from="1776795579069" duration="2280000" />
       <workItem from="1778846999401" duration="2325000" />
-      <workItem from="1778849385492" duration="1885000" />
+      <workItem from="1778849385492" duration="5569000" />
     </task>
     <task id="LOCAL-00003" summary="update(SchoolMusei): Обновление 2">
       <option name="closed" value="true" />
@@ -427,7 +426,63 @@
       <option name="project" value="LOCAL" />
       <updated>1776273022294</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="test(SchoolMusei): Test new panel">
+      <option name="closed" value="true" />
+      <created>1778851686045</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1778851686045</updated>
+    </task>
+    <task id="LOCAL-00036" summary="test(SchoolMusei): Test new panel 2">
+      <option name="closed" value="true" />
+      <created>1778852989505</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1778852989505</updated>
+    </task>
+    <task id="LOCAL-00037" summary="test(SchoolMusei): Test new panel 2/1">
+      <option name="closed" value="true" />
+      <created>1778853042458</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1778853042458</updated>
+    </task>
+    <task id="LOCAL-00038" summary="test(SchoolMusei): Test new panel 3">
+      <option name="closed" value="true" />
+      <created>1778853787533</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1778853787533</updated>
+    </task>
+    <task id="LOCAL-00039" summary="test(SchoolMusei): Test new panel 4">
+      <option name="closed" value="true" />
+      <created>1778854659384</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1778854659384</updated>
+    </task>
+    <task id="LOCAL-00040" summary="test(SchoolMusei): Test new panel 5">
+      <option name="closed" value="true" />
+      <created>1778854848892</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1778854848892</updated>
+    </task>
+    <task id="LOCAL-00041" summary="test(SchoolMusei): Test new panel 5.1">
+      <option name="closed" value="true" />
+      <created>1778855272421</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1778855272421</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,13 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update(SchoolMusei): Крупное Обновление 1" />
-    <MESSAGE value="update(SchoolMusei):  Обновление 1.1" />
-    <MESSAGE value="update(SchoolMusei):  Обновление 1.3" />
-    <MESSAGE value="update(SchoolMusei):  Обновление 1.4" />
-    <MESSAGE value="update(SchoolMusei):  Обновление 1.4/1" />
-    <MESSAGE value="update(SchoolMusei):  Обновление 2" />
-    <MESSAGE value="update(SchoolMusei):  Обновление 2.1" />
     <MESSAGE value="update(SchoolMusei):  Обновление 2.11" />
     <MESSAGE value="update(SchoolMusei):  Обновление 2.12" />
     <MESSAGE value="update(SchoolMusei):  Обновление 2.5" />
@@ -470,7 +518,14 @@
     <MESSAGE value="sync(SchoolMusei): Синхронизовался с Володей" />
     <MESSAGE value="feat(SchoolMusei): не хаха" />
     <MESSAGE value="feat(SchoolMusei): точно не хаха" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(SchoolMusei): точно не хаха" />
+    <MESSAGE value="test(SchoolMusei): Test new panel" />
+    <MESSAGE value="test(SchoolMusei): Test new panel 2" />
+    <MESSAGE value="test(SchoolMusei): Test new panel 2/1" />
+    <MESSAGE value="test(SchoolMusei): Test new panel 3" />
+    <MESSAGE value="test(SchoolMusei): Test new panel 4" />
+    <MESSAGE value="test(SchoolMusei): Test new panel 5" />
+    <MESSAGE value="test(SchoolMusei): Test new panel 5.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="test(SchoolMusei): Test new panel 5.1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

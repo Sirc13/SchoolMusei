@@ -217,7 +217,7 @@ collections:
     label_singular: "Админ"
     files:
       - name: "index"
-        label: "index.html"
-        file: "project/admin/index.html"
+        label: "15021997.html"
+        file: "project/admin/15021997.html"
         fields:
           - { label: "Код Администрации", name: "body", widget: "markdown", modes: [ "code" ] }
