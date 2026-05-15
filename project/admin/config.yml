@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: Sirc13/SchoolMusei  # например: ivanov/moy-sait
+  branch: main
+  # Не нужно указывать base_url — Sveltia CMS умеет работать напрямую!
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Страницы"
+    label_singular: "Страница"
+    files:
+      - name: "index"
+        label: "Главная страница"
+        file: "index.html"
+        fields:
+          - { label: "Содержание", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "about"
+        label: "О нас"
+        file: "about.html"
+        fields:
+          - { label: "Содержание", name: "body", widget: "markdown", modes: ["code"] }

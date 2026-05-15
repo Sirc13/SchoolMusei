@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rusty Lake Untold: The Lab</title>
+    <style>
+        :root { --bg: #0a0a0a; --accent: #ffd700; --text: #d4c5a1; --paper: #f4e9cd; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: serif; overflow: hidden; display: flex; flex-direction: row; height: 100vh; }
+        #game-container { flex-grow: 1; position: relative; display: flex; background: #000; overflow: hidden; }
+        canvas { width: 100%; height: 100%; cursor: crosshair; display: block; }
+        #inventory { width: 130px; height: 100vh; background: #161616; border-left: 3px solid #333; display: flex; flex-direction: column; align-items: center; padding: 10px; gap: 10px; z-index: 10; overflow-y: auto; flex-shrink: 0; }
+        .slot { width: 95px; height: 95px; border: 1px solid #444; background: #111; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 10px; text-align: center; color: #777; transition: 0.2s; padding: 5px; flex-shrink: 0; }
+        .slot.active { border-color: var(--accent); color: var(--accent); box-shadow: inset 0 0 15px rgba(255,215,0,0.1); }
+        #ui-text { position: absolute; bottom: 25px; left: 25px; pointer-events: none; text-shadow: 2px 2px 4px #000; font-size: 1.1rem; max-width: 70%; z-index: 5; }
+        #fade { position: absolute; width: 100%; height: 100%; background: #000; opacity: 0; pointer-events: none; transition: 0.6s; z-index: 1000; }
+        .modal { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -45%); background: #222; border: 3px solid #444; padding: 25px; display: none; flex-direction: column; gap: 15px; z-index: 150; box-shadow: 0 0 100px #000; opacity: 0; transition: 0.3s; }
+        .modal.active { display: flex; opacity: 1; transform: translate(-50%, -50%); }
+        #item-viewer { background: var(--paper); color: #111; border: 8px solid #3d2b1f; min-width: 450px; }
+        input { background: #000; border: 1px solid var(--accent); color: var(--accent); padding: 10px; text-align: center; font-size: 24px; width: 100%; text-transform: uppercase; }
+        button { background: #333; color: #fff; border: none; padding: 12px; cursor: pointer; text-transform: uppercase; font-size: 11px; }
+        .cipher-container { display: flex; gap: 30px; justify-content: center; align-items: flex-start; padding: 20px; }
+        .cipher-grid { display: grid; grid-template-columns: repeat(6, 30px); grid-template-rows: repeat(6, 35px); gap: 5px; font-size: 20px; font-weight: bold; text-align: center; font-family: serif; }
+        .cipher-grid div { display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <div id="fade"></div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui-text"><p id="msg">Нажмите, чтобы начать...</p></div>
+
+    <div id="puzzle-ui" class="modal">
+        <h3 id="puzzle-label" style="margin:0; font-size:16px; color: #aaa;">ВВЕДИТЕ КОД</h3>
+        <input type="text" id="puzzle-input" maxlength="10">
+        <button onclick="checkPuzzle()">ПОДТВЕРДИТЬ</button>
+        <button onclick="closeUI()" style="background:#422;">ЗАКРЫТЬ</button>
+    </div>
+
+    <div id="item-viewer" class="modal">
+        <div id="view-content"></div>
+        <button onclick="closeUI()" style="margin-top:20px; width:100%; background:#8b4513; color:white;">ЗАКРЫТЬ</button>
+    </div>
+</div>
+
+<div id="inventory">
+    <script>for(let i=0; i<10; i++) document.write(`<div class="slot" onclick="clickSlot(${i})" id="slot${i}"></div>`);</script>
+</div>
+
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const msgDisp = document.getElementById('msg');
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    let state = {
+        room: 'bedroom',
+        inventory: [],
+        selected: null,
+        carpetMoved: false,
+        bedroomUnlocked: false,
+        isTransitioning: false,
+        sinkOpen: false,
+        history: { note2a: false, note2b: false, key: false, flashlight: false, idCard: false, filter: false }
+    };
+
+    const itemsData = {
+        'Заметка 2a': '<div style="font-size:24px; padding:20px;">1 разУм<br>2 памЯ..<br>3 узР..<br>4 за..<br>5 ..</div>',
+        'Заметка 2b': '<div style="font-size:24px; padding:20px;">..ть<br>..ите<br>..моК<br>..душА</div>',
+        'Фонарик': 'Фонарик. Работает.',
+        'Ключ': 'Стальной ключ.',
+        'ID-карта': 'ID-карта: Р. Вандербум.',
+        'Кофе-фильтр': 'Грязный фильтр из мусорки.',
+        'Шифр': `<div class="cipher-container"><div class="cipher-grid">${"128709983942342157638410703729749271".split('').map(v=>`<div>${v}</div>`).join('')}</div><div class="cipher-grid">${"ПЯЮБЙУАФДЖЗЗММУЗАРЯНШЪМИТЦАЫОТЬХВЩКЕ".split('').map(v=>`<div>${v}</div>`).join('')}</div></div>`
+    };
+
+    const rooms = {
+        bedroom: {
+            bg: '#2c2c24',
+            getObjs: () => [
+                { rx: 0.1, ry: 0.05, rw: 0.08, rh: 0.08, col: '#000', isCam: true, action: () => print("Камера следит.") },
+                { rx: 0.82, ry: 0.05, rw: 0.1, rh: 0.08, col: '#444', action: () => print("Вентиляция.") },
+                { rx: 0.52, ry: 0.4, rw: 0.03, rh: 0.06, col: '#aaa', action: () => print("Нет питания.") },
+                { rx: 0.6, ry: 0.3, rw: 0.35, rh: 0.6, col: '#443', action: () => { if(!state.history.note2a) { addItem('Заметка 2a'); state.history.note2a=true; } else print("Пусто."); } },
+                { rx: 0.15, ry: 0.55, rw: 0.15, rh: 0.35, col: '#3d2b1f' },
+                { rx: 0.16, ry: 0.57, rw: 0.13, rh: 0.08, col: '#5d4037', action: () => { if (state.history.key) print("Пусто."); else openPuzzle('КОРОБКА', '26773', () => { addItem('Ключ'); state.history.key=true; }); }},
+                { rx: 0.16, ry: 0.68, rw: 0.13, rh: 0.08, col: '#5d4037', action: () => { if(!state.history.note2b) { addItem('Заметка 2b'); state.history.note2b=true; } else print("Пусто."); } },
+                { rx: 0.16, ry: 0.79, rw: 0.13, rh: 0.08, col: '#5d4037', action: () => { if(!state.history.flashlight) { addItem('Фонарик'); state.history.flashlight=true; } else print("Пусто."); } },
+                { rx: 0.4, ry: 0.2, rw: 0.12, rh: 0.6, col: '#111', action: () => { if(state.bedroomUnlocked || (state.selected && state.selected.name === 'Ключ')) { state.bedroomUnlocked = true; changeScene('corridor', 'Коридор.'); } else print("Заперто."); }},
+                { rx: 0.4, ry: 0.85, rw: 0.3, rh: 0.1, col: state.carpetMoved ? '#111' : '#5d4037', action: () => { if(!state.carpetMoved) { state.carpetMoved = true; print("Ковер отодвинут."); } else if(state.selected && state.selected.name === 'Фонарик') showItem('Шифр'); else print("Темно."); }}
+            ]
+        },
+        corridor: {
+            bg: '#1a1a1a',
+            getObjs: () => [
+                { rx: 0.49, ry: 0.22, rw: 0.02, rh: 0.58, col: '#333' },
+                { rx: 0.2, ry: 0.22, rw: 0.6, rh: 0.04, col: '#333' },
+                { rx: 0.45, ry: 0.4, rw: 0.06, rh: 0.03, col: '#333' },
+                { rx: 0.65, ry: 0.27, rw: 0.03, rh: 0.1, col: '#333' },
+                { rx: 0.5, ry: 0.18, rw: 0, rh: 0, col: 'transparent', label: 'Пора просыпаться', isText: true },
+                { rx: 0.15, ry: 0.75, rw: 0.08, rh: 0.1, col: '#d4c5a1', isIcon: true },
+                { rx: 0.05, ry: 0.08, rw: 0.2, rh: 0.32, col: '#222', label: 'ХИМЛАБОРАТОРИЯ', action: () => print("Закрыто.") },
+                { rx: 0.75, ry: 0.08, rw: 0.2, rh: 0.32, col: '#222', label: 'ОФИС', action: () => print("Нужен отпечаток.") },
+                { rx: 0.3, ry: 0.32, rw: 0.15, rh: 0.22, col: '#222', label: 'КУХНЯ', action: () => changeScene('kitchen', 'Кухня.') },
+                { rx: 0.6, ry: 0.37, rw: 0.15, rh: 0.12, col: '#522', label: 'ЭЛЕКТРОЩИТОВАЯ', action: () => print("Нужен доступ.") },
+                { rx: 0.4, ry: 0.75, rw: 0.2, rh: 0.15, col: '#2c2c24', label: 'СПАЛЬНЯ', action: () => changeScene('bedroom', 'Назад.') }
+            ]
+        },
+        kitchen: {
+            bg: '#333',
+            getObjs: () => [
+                { rx: 0.05, ry: 0.05, rw: 0.06, rh: 0.06, col: '#000', isCam: true, action: () => print("Камера.") },
+                { rx: 0.4, ry: 0.05, rw: 0.08, rh: 0.04, col: '#222', label: '||||||', action: () => print("Вентиляция.") },
+                // Стол
+                { rx: 0.1, ry: 0.6, rw: 0.25, rh: 0.03, col: '#3d2b1f' },
+                { rx: 0.12, ry: 0.63, rw: 0.02, rh: 0.2, col: '#3d2b1f' }, { rx: 0.25, ry: 0.63, rw: 0.02, rh: 0.2, col: '#3d2b1f' },
+                // Предметы на столе
+                { rx: 0.15, ry: 0.52, rw: 0.08, rh: 0.08, col: '#522', label: 'ЛЁД', action: () => openPuzzle('ТЕРМОКОНТЕЙНЕР', 'ХОЛОД', () => print("Внутри плоть.")) },
+                { rx: 0.25, ry: 0.54, rw: 0.04, rh: 0.06, col: '#aaa', label: '📞', action: () => print("Нет питания.") },
+                // Стул
+                { rx: 0.03, ry: 0.72, rw: 0.06, rh: 0.02, col: '#3d2b1f' }, // сиденье
+                { rx: 0.03, ry: 0.65, rw: 0.01, rh: 0.1, col: '#3d2b1f' }, // спинка
+                { rx: 0.03, ry: 0.74, rw: 0.01, rh: 0.1, col: '#3d2b1f' }, // ножка
+                { rx: 0.03, ry: 0.65, rw: 0.06, rh: 0.1, col: '#443', label: 'ХАЛАТ', action: () => { if(!state.history.idCard) { addItem('ID-карта'); state.history.idCard=true; } else print("Пусто."); } },
+                // Шкаф под раковиной
+                { rx: 0.5, ry: 0.5, rw: 0.4, rh: 0.4, col: '#444' },
+                { rx: 0.52, ry: 0.65, rw: 0.17, rh: 0.22, col: state.sinkOpen ? '#111' : '#222', action: () => { state.sinkOpen = true; print("Левый шкафчик открыт."); } },
+                { rx: 0.71, ry: 0.65, rw: 0.17, rh: 0.22, col: '#222', action: () => print("Заклинено.") },
+                { rx: 0.55, ry: 0.45, rw: 0.1, rh: 0.05, col: '#888', action: () => print("Раковина.") },
+                // Внутренности шкафа (если открыт)
+                ...(state.sinkOpen ? [
+                    { rx: 0.58, ry: 0.65, rw: 0.02, rh: 0.22, col: '#555' }, // Труба
+                    { rx: 0.57, ry: 0.75, rw: 0.04, rh: 0.04, col: '#a22', label: '⚙️', action: () => print("Нужен гаечный ключ.") } // Вентиль
+                ] : []),
+                { rx: 0.7, ry: 0.35, rw: 0.1, rh: 0.15, col: '#222', label: 'КОФЕ', action: () => print("Нужен ток.") },
+                { rx: 0.85, ry: 0.8, rw: 0.08, rh: 0.15, col: '#222', label: 'МУСОР', action: () => { if(!state.history.filter) { addItem('Кофе-фильтр'); state.history.filter=true; } else print("Пусто."); } },
+                { rx: 0.85, ry: 0.1, rw: 0.1, rh: 0.06, col: '#444', label: 'НАЗАД', action: () => changeScene('corridor', 'Коридор.') }
+            ]
+        }
+    };
+
+    function playSfx(type) {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator(); const g = audioCtx.createGain();
+        osc.connect(g); g.connect(audioCtx.destination);
+        if(type === 'click') { osc.frequency.setValueAtTime(600, audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1); osc.start(); osc.stop(audioCtx.currentTime + 0.1); }
+        else if(type === 'error') { osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4); osc.start(); osc.stop(audioCtx.currentTime + 0.4); }
+        else if(type === 'success') { osc.type = 'triangle'; osc.frequency.setValueAtTime(500, audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5); osc.start(); osc.stop(audioCtx.currentTime + 0.5); }
+    }
+
+    function draw() {
+        canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight;
+        const room = rooms[state.room];
+        ctx.fillStyle = room.bg; ctx.fillRect(0,0,canvas.width,canvas.height);
+        room.getObjs().forEach(o => {
+            const x = o.rx*canvas.width, y = o.ry*canvas.height, w = o.rw*canvas.width, h = o.rh*canvas.height;
+            if (o.isCam) { ctx.fillStyle = '#000'; ctx.fillRect(x,y,w,h); ctx.fillStyle = '#f00'; ctx.beginPath(); ctx.arc(x+w/2, y+h/2, 2, 0, Math.PI*2); ctx.fill(); }
+            else if (o.isIcon) { ctx.strokeStyle = '#d4c5a1'; ctx.strokeRect(x,y,w,h); }
+            else if (o.col !== 'transparent') { ctx.fillStyle = o.col; ctx.fillRect(x,y,w,h); ctx.strokeStyle = '#444'; ctx.strokeRect(x,y,w,h); }
+            if(o.label) { ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.font = o.isText ? "bold 22px serif" : "10px Arial"; ctx.fillStyle = o.isText ? "#d4c5a1" : "#fff"; ctx.fillText(o.label, o.isText ? o.rx*canvas.width : x+w/2, o.isText ? o.ry*canvas.height : y+h/2); }
+        });
+    }
+
+    function changeScene(newRoom, msg) {
+        state.isTransitioning = true; closeUI();
+        document.getElementById('fade').style.opacity = 1;
+        setTimeout(() => {
+            // Удаление предметов при выходе из спальни [Инструкция стр. 6-8]
+            if (state.room === 'bedroom' && newRoom !== 'bedroom') {
+                state.inventory = state.inventory.filter(i => !['Заметка 2a', 'Заметка 2b', 'Ключ'].includes(i.name));
+                if(state.selected && ['Ключ', 'Заметка 2a', 'Заметка 2b'].includes(state.selected.name)) state.selected = null;
+                updateInv();
+            }
+            state.room = newRoom; print(msg); draw();
+            document.getElementById('fade').style.opacity = 0; state.isTransitioning = false;
+        }, 600);
+    }
+
+    function print(t) { msgDisp.innerText = t; }
+    function addItem(name) { if(state.inventory.length < 10 && !state.inventory.some(i=>i.name===name)) { state.inventory.push({name}); updateInv(); print(`Взято: ${name}`); } }
+    function updateInv() { for(let i=0; i<10; i++) { const s = document.getElementById(`slot${i}`); s.innerText = state.inventory[i] ? state.inventory[i].name : ""; s.classList.toggle('active', state.inventory[i] === state.selected); } }
+    function clickSlot(i) { const item = state.inventory[i]; if(!item) return; if(state.selected === item) showItem(item.name); else { state.selected = item; playSfx('click'); } updateInv(); }
+    function openPuzzle(label, ans, cb) { const ui = document.getElementById('puzzle-ui'); document.getElementById('puzzle-label').innerText = label; ui.style.display = 'flex'; setTimeout(() => ui.classList.add('active'), 10); window.currentPuzzle = { ans, cb }; }
+    function checkPuzzle() { const input = document.getElementById('puzzle-input'); if(input.value.toUpperCase() === window.currentPuzzle.ans) { playSfx('success'); window.currentPuzzle.cb(); closeUI(); } else { playSfx('error'); input.value = "ОШИБКА"; setTimeout(() => input.value = "", 600); } }
+    function showItem(name) { document.getElementById('view-content').innerHTML = itemsData[name]; const ui = document.getElementById('item-viewer'); ui.style.display = 'flex'; setTimeout(() => ui.classList.add('active'), 10); }
+    function closeUI() { document.querySelectorAll('.modal').forEach(ui => { ui.classList.remove('active'); setTimeout(() => ui.style.display = 'none', 300); }); }
+
+    canvas.addEventListener('mousedown', (e) => {
+        if(state.isTransitioning) return;
+        const rect = canvas.getBoundingClientRect();
+        const mx = (e.clientX - rect.left) / canvas.width, my = (e.clientY - rect.top) / canvas.height;
+        rooms[state.room].getObjs().forEach(o => { if(o.action && mx > o.rx && mx < o.rx+o.rw && my > o.ry && my < o.ry+o.rh) { playSfx('click'); o.action(); } });
+        draw();
+    });
+
+    window.addEventListener('resize', draw);
+    draw();
+</script>
+</body>
+</html>
