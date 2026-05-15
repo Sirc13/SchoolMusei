@@ -132,6 +132,52 @@ collections:
         fields:
           - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
 
+  - name: "Lighthouse"
+    label: "🗼 Маяк31"
+    label_singular: "Страница"
+    files:
+      - name: "1"
+        label: "1.html"
+        file: "project/Maik31/1.html"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+
+      - name: "2"
+        label: "2.html"
+        file: "project/Maik31/2.html"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+
+      - name: "Feb2018"
+        label: "Feb2018.html"
+        file: "project/Maik31/Feb2018.html"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+
+      - name: "M2018"
+        label: "M2018.html"
+        file: "project/Maik31/M2018.html"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+
+      - name: "2022"
+        label: "2022.html"
+        file: "project/Maik31/2022.html"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+
+      - name: "2023"
+        label: "2023.html"
+        file: "project/Maik31/2023.html"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+
+      - name: "2024"
+        label: "2024.html"
+        file: "project/Maik31/2024.html"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: [ "code" ] }
+
   # ========== CSS ФАЙЛЫ ==========
   - name: "styles"
     label: "🎨 CSS стили"
