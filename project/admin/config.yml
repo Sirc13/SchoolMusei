@@ -3,22 +3,165 @@ backend:
   repo: Sirc13/SchoolMusei
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "project/images"
+public_folder: "/project/images"
 
 collections:
-  - name: "pages"
-    label: "Страницы"
-    label_singular: "Страница"
+  # ========== ГЛАВНАЯ СТРАНИЦА В КОРНЕ ==========
+  - name: "main"
+    label: "Главная страница"
+    label_singular: "Главная"
     files:
       - name: "index"
-        label: "Главная страница"
+        label: "index.html (корень)"
         file: "index.html"
         fields:
-          - { label: "Содержание", name: "body", widget: "markdown", modes: ["code"] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
 
-      - name: "about"
-        label: "О нас"
-        file: "project/about.html"
+  # ========== ВСЕ СТРАНИЦЫ ИЗ ПАПКИ PROJECT ==========
+  - name: "project_pages"
+    label: "📁 Страницы проекта"
+    label_singular: "Страница"
+    description: "Все HTML-страницы из папки project"
+    files:
+      - name: "archive"
+        label: "archive.html"
+        file: "project/archive.html"
         fields:
-          - { label: "Содержание", name: "body", widget: "markdown", modes: ["code"] }
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "auto"
+        label: "auto.html"
+        file: "project/auto.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "BOB"
+        label: "BOB.html"
+        file: "project/BOB.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "CBO"
+        label: "CBO.html"
+        file: "project/CBO.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "day_health"
+        label: "day_health.html"
+        file: "project/day_health.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "dobro"
+        label: "dobro.html"
+        file: "project/dobro.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "dynasty"
+        label: "dynasty.html"
+        file: "project/dynasty.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "game"
+        label: "game.html"
+        file: "project/game.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "historySchool"
+        label: "historySchool.html"
+        file: "project/historySchool.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "medals"
+        label: "medals.html"
+        file: "project/medals.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "newspapers"
+        label: "newspapers.html"
+        file: "project/newspapers.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "olimp"
+        label: "olimp.html"
+        file: "project/olimp.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "patriot"
+        label: "patriot.html"
+        file: "project/patriot.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "successSchool"
+        label: "successSchool.html"
+        file: "project/successSchool.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "teacherYear"
+        label: "teacherYear.html"
+        file: "project/teacherYear.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "veterans"
+        label: "veterans.html"
+        file: "project/veterans.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "vsoch"
+        label: "vsoch.html"
+        file: "project/vsoch.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "ЗБС"
+        label: "ЗБС.html"
+        file: "project/ЗБС.html"
+        fields:
+          - { label: "Код страницы", name: "body", widget: "markdown", modes: ["code"] }
+
+  # ========== CSS ФАЙЛЫ ==========
+  - name: "styles"
+    label: "🎨 CSS стили"
+    label_singular: "Стиль"
+    files:
+      - name: "style"
+        label: "style.css"
+        file: "project/style.css"
+        fields:
+          - { label: "Код CSS", name: "body", widget: "markdown", modes: ["code"] }
+
+  # ========== JS ФАЙЛЫ ==========
+  - name: "scripts"
+    label: "⚙️ JavaScript"
+    label_singular: "Скрипт"
+    files:
+      - name: "menu"
+        label: "menu.js"
+        file: "project/menu.js"
+        fields:
+          - { label: "Код JS", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "modalMenuCore"
+        label: "modalMenuCore.js"
+        file: "project/modalMenuCore.js"
+        fields:
+          - { label: "Код JS", name: "body", widget: "markdown", modes: ["code"] }
+
+      - name: "SpecialPicture"
+        label: "SpecialPicture.js"
+        file: "project/SpecialPicture.js"
+        fields:
+          - { label: "Код JS", name: "body", widget: "markdown", modes: ["code"] }
