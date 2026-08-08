@@ -1,12 +1,15 @@
 :root {
     --primary: #2c3e50;
     --secondary: #3498db;
-    --accent: #e74c3c;
-    --light: #ecf0f1;
-    --dark: #2c3e50;
-    --success: #27ae60;
-    --warning: #f39c12;
     --text: #34495e;
+    --bg: #c3cfe2;
+}
+
+[data-theme="dark"] {
+    --bg: #34495e;
+    --text: #c3cfe2;
+    --primary: #3498db;
+    --secondary: #2c3e50;
 }
 
 * {
@@ -22,8 +25,9 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--bg);
     color: var(--text);
+    transition: background 0.4s ease, color 0.4s ease;
     line-height: 1.6;
 }
 
@@ -44,7 +48,7 @@ body {
     background-size: 100% 100%;;
     height: 300px;
     padding: 15px 30px;
-    color: white;
+    color: var(--bg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 100;
@@ -84,7 +88,7 @@ body {
 }
 
 .sidebar h2 {
-    color: white;
+    color: var(--bg);
     text-align: center;
     padding-bottom: 15px;
     white-space: nowrap;
@@ -105,7 +109,7 @@ body {
 }
 
 .sidebar a {
-    color: white;
+    color: var(--bg);
     text-decoration: none;
     font-weight: 500;
     display: block;
@@ -182,7 +186,7 @@ body {
 .main-content {
     flex: 1;
     padding: 40px;
-    background-color: white;
+    background-color: var(--bg);
     transition: margin-left 0.3s ease;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
     overflow-y: auto;
@@ -207,7 +211,7 @@ body {
 
 /* Карточки */
 .card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: var(--bg);
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 12px;
@@ -287,9 +291,9 @@ body {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    background: #f8f9fa;
+    background: var(--bg);
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -299,7 +303,7 @@ body {
 
 .photo-item:hover {
     transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .photo-item img {
@@ -307,14 +311,14 @@ body {
     height: auto;
     object-fit: contain;
     display: block;
-    background: white;
+    background: var(--bg);
     min-height: 200px;
     max-height: 300px;
 }
 
 .photo-caption {
     background: rgba(44, 62, 80, 0.9);
-    color: white;
+    color: var(--bg);
     padding: 12px;
     font-size: 14px;
     text-align: center;
@@ -326,7 +330,7 @@ footer {
     text-align: center;
     padding: 20px;
     background: var(--primary);
-    color: white;
+    color: var(--bg);
     margin-top: auto;
     font-size: 14px;
 }
@@ -361,7 +365,7 @@ footer {
     display: block;
     width: 20px;
     height: 2px;
-    background: white;
+    background: var(--bg);
     transition: all 0.3s ease;
     transform-origin: center;
 }
@@ -423,7 +427,7 @@ footer {
 }
 
 .timeline-content {
-    background: white;
+    background: var(--bg);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -469,7 +473,7 @@ footer {
 .form-group textarea {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: var(--bg);
     border-radius: 8px;
     font-size: 16px;
     transition: border-color 0.3s;
@@ -484,7 +488,7 @@ footer {
 
 .submit-btn {
     background: var(--secondary);
-    color: white;
+    color: var(--bg);
     border: none;
     padding: 12px 25px;
     border-radius: 8px;
@@ -533,7 +537,7 @@ footer {
 
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: var(--bg);
     margin: 1% auto;
     padding: 30px;
     width: 95%;
@@ -565,7 +569,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f9fa;
+    background: var(--bg);
     border-radius: 8px;
     flex-shrink: 0;
 }
@@ -662,11 +666,12 @@ footer {
     color: #377072;
     font-style: normal;
 }
+
 /* Фиксируем контейнер в верхнем правом углу */
 .cube-container {
     position: absolute;
-    top: 20px;     /* Отступ сверху */
-    right: 20px;   /* Отступ справа */
+    top: 20px; /* Отступ сверху */
+    right: 20px; /* Отступ справа */
     z-index: 9999; /* Чтобы куб был поверх всего контента */
 }
 
@@ -705,12 +710,29 @@ footer {
 }
 
 /* Расстановка граней (половина от 50px = 25px) */
-.front  { transform: translateZ(25px); }
-.back   { transform: rotateY(180deg) translateZ(25px); }
-.right  { transform: rotateY(90deg) translateZ(25px); }
-.left   { transform: rotateY(-90deg) translateZ(25px); }
-.top    { transform: rotateX(90deg) translateZ(25px); }
-.bottom { transform: rotateX(-90deg) translateZ(25px); }
+.front {
+    transform: translateZ(25px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(25px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(25px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(25px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(25px);
+}
 
 
 .modal-image {
@@ -723,6 +745,7 @@ footer {
     transition: transform 0.3s ease;
     cursor: grab;
 }
+
 .modal-image.zoomed {
     cursor: grab;
 }
@@ -770,7 +793,7 @@ footer {
     cursor: pointer;
     color: #666;
     z-index: 10;
-    background: white;
+    background: var(--bg);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -783,7 +806,7 @@ footer {
 
 .close:hover {
     color: #000;
-    background: #f0f0f0;
+    background: var(--bg);
     transform: scale(1.1);
 }
 
@@ -840,7 +863,7 @@ footer {
 
 .sidebar-header h2 {
     margin: 0;
-    color: white;
+    color: var(--bg);
     font-size: 22px;
     font-weight: 600;
     white-space: nowrap;
@@ -863,6 +886,7 @@ footer {
     flex-shrink: 0;
     position: relative;
 }
+
 /* Контейнер для элементов управления zoom */
 .zoom-controls-container {
     position: relative;
@@ -883,11 +907,12 @@ footer {
     gap: 8px;
     margin: 0 auto;
 }
+
 .zoom-btn {
     width: 40px;
     height: 40px;
     background: var(--secondary);
-    color: white;
+    color: var(--bg);
     border: none;
     border-radius: 50%;
     font-size: 18px;
@@ -896,7 +921,7 @@ footer {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -908,7 +933,7 @@ footer {
 /* Индикатор zoom */
 .zoom-indicator {
     background: rgba(0, 0, 0, 0.8);
-    color: white;
+    color: var(--bg);
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
@@ -918,8 +943,8 @@ footer {
 
 /* Кнопка сброса */
 .reset-zoom-btn {
-    background: var(--accent);
-    color: white;
+    background: #e74c3c;
+    color: var(--bg);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -929,7 +954,7 @@ footer {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -947,7 +972,7 @@ footer {
     display: block;
     width: 16px;
     height: 2px;
-    background: white;
+    background: var(--bg);
     transition: all 0.3s ease;
 }
 
@@ -1033,6 +1058,7 @@ footer {
         gap: 15px;
         margin: 20px 0;
     }
+
     .photo-item img {
         min-height: 150px;
         max-height: 250px;
@@ -1270,7 +1296,7 @@ footer {
         left: 50%;
         transform: translateX(-50%);
         background: rgba(0, 0, 0, 0.8);
-        color: white;
+        color: var(--bg);
         padding: 5px 10px;
         border-radius: 4px;
         font-size: 12px;
@@ -1283,5 +1309,87 @@ footer {
 
     .reset-zoom-btn:hover::after {
         opacity: 1;
+    }
+}
+
+.theme-btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.theme-btn .icon-sun,
+.theme-btn .icon-moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Анимация переключения */
+.theme-btn.dark .icon-sun {
+    transform: translate(-50%, -50%) rotate(360deg) scale(0);
+    opacity: 0;
+}
+
+.theme-btn.dark .icon-moon {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 1;
+}
+
+.theme-btn:not(.dark) .icon-sun {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 1;
+}
+
+.theme-btn:not(.dark) .icon-moon {
+    transform: translate(-50%, -50%) rotate(-360deg) scale(0);
+    opacity: 0;
+}
+
+/* Эффект пульсации (ripple) */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple-anim 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-anim {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Анимация вращения самой кнопки */
+.theme-btn.spin {
+    animation: spin 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
     }
 }

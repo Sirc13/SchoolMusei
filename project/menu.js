@@ -271,3 +271,129 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+class ThemeManager {
+    constructor() {
+        this.btn = document.getElementById('theme-toggle');
+        this.currentTheme = localStorage.getItem('global-theme') || 'light';
+        this.isAnimating = false;
+
+        this.init();
+    }
+
+    init() {
+        // Применяем сохранённую тему
+        this.applyTheme(this.currentTheme);
+        this.updateButtonState(this.currentTheme);
+
+        // Обработчик клика
+        this.btn.addEventListener('click', (e) => this.toggleTheme(e));
+
+        // Слушаем изменения из других вкладок/сайтов
+        this.setupCrossSiteListener();
+    }
+
+    toggleTheme(e) {
+        if (this.isAnimating) return;
+        this.isAnimating = true;
+
+        // Создаём ripple эффект
+        this.createRipple(e);
+
+        // Меняем тему
+        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        this.currentTheme = newTheme;
+
+        // Анимация кнопки
+        this.btn.classList.add('spin');
+        setTimeout(() => this.btn.classList.remove('spin'), 600);
+
+        // Применяем тему
+        this.applyTheme(newTheme);
+        this.updateButtonState(newTheme);
+
+        // Сохраняем и рассылаем
+        localStorage.setItem('global-theme', newTheme);
+        this.broadcastTheme(newTheme);
+
+        // Снимаем блокировку
+        setTimeout(() => {
+            this.isAnimating = false;
+        }, 700);
+    }
+
+    applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+
+        // Пример смены CSS-переменных
+        if (theme === 'dark') {
+            document.documentElement.style.setProperty('--bg', '#1a1a1a');
+            document.documentElement.style.setProperty('--text', '#ffffff');
+            document.documentElement.style.setProperty('--btn-bg', '#2d2d2d');
+        } else {
+            document.documentElement.style.setProperty('--bg', '#ffffff');
+            document.documentElement.style.setProperty('--text', '#1a1a1a');
+            document.documentElement.style.setProperty('--btn-bg', '#f0f0f0');
+        }
+    }
+
+    updateButtonState(theme) {
+        if (theme === 'dark') {
+            this.btn.classList.add('dark');
+        } else {
+            this.btn.classList.remove('dark');
+        }
+    }
+
+    createRipple(e) {
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        const rect = this.btn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+        this.btn.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+    }
+
+    setupCrossSiteListener() {
+        // Для LocalStorage (одинаковый домен)
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'global-theme' && e.newValue !== this.currentTheme) {
+                this.currentTheme = e.newValue;
+                this.applyTheme(e.newValue);
+                this.updateButtonState(e.newValue);
+                // Добавляем анимацию при синхронизации
+                this.btn.classList.add('spin');
+                setTimeout(() => this.btn.classList.remove('spin'), 600);
+            }
+        });
+
+        // Для PostMessage (разные домены через iframe)
+        window.addEventListener('message', (e) => {
+            if (e.data.type === 'theme-change' && e.data.theme !== this.currentTheme) {
+                this.currentTheme = e.data.theme;
+                this.applyTheme(e.data.theme);
+                this.updateButtonState(e.data.theme);
+                this.btn.classList.add('spin');
+                setTimeout(() => this.btn.classList.remove('spin'), 600);
+            }
+        });
+    }
+
+    broadcastTheme(theme) {
+        // Отправляем через iframe-посредник если он есть
+        const bridge = document.querySelector('iframe[src*="theme-bridge"]');
+        if (bridge) {
+            bridge.contentWindow.postMessage({
+                type: 'theme-change',
+                theme: theme
+            }, '*');
+        }
+    }
+}
+
+// Инициализация
+document.addEventListener('DOMContentLoaded', () => {
+    new ThemeManager();
+});
